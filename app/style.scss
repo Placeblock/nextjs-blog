@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("/Montserrat.ttf") format("woff2 supports variations"),
+    url("/Montserrat.ttf") format("woff2-variations");
+    font-weight: 100, 200, 300, 800;
+}
+
+body, html {
+    margin: 0px;
+    background: 
+        radial-gradient(50vw circle at 30% 200px, rgba(78, 31, 136, 0.329) 0%, rgba(0,0,0,0) 100%),
+        radial-gradient(50vw circle at 80% 400px, rgba(31, 97, 136, 0.329) 0%, rgba(0,0,0,0) 100%),
+        radial-gradient(50vw circle at 20% 800px, rgba(31, 50, 136, 0.329) 0%, rgba(0,0,0,0) 100%),
+        rgb(3, 3, 3); 
+    background-repeat: no-repeat;
+    min-height: 100%;
+    width: 100%;
+    color: rgb(224, 224, 224);
+    font-family: "Montserrat";
+    display: flex;
+    justify-content: center;
+}
+
+#blog {
+    width: min(700px, 95%);
+}
+
+a {
+    color: rgb(81, 110, 204);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

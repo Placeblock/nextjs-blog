@@ -1,0 +1,16 @@
+#header {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 80px;
+}
+
+.header-line {
+    height: 1px;
+    background-color: white;
+}
+
+.header-line {
+    flex-grow: 2;
+}

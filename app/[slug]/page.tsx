@@ -1,14 +1,17 @@
 import React from "react";
 import { getBlogPostData } from "lib/posts";
 import Post from "./post";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 export default async function Page({ params }: { params: { slug: string } }) {
     const slug = params.slug
 
     const data = await getBlogPostData(slug);
 
-    return <div><Post code={data.code}/></div>
+    return <div>
+        <h1>{data.frontmatter["title"]}</h1>
+        <Post code={data.code}/>
+    </div>
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {

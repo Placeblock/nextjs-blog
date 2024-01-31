@@ -1,3 +1,7 @@
+import "./style.scss";
+import Header from "@components/header/header";
+
+
 export default function RootLayout({
     children,
 }: {
@@ -7,6 +11,7 @@ export default function RootLayout({
         <html lang="en">
             <body>
                 <div id="blog">
+                    <Header />
                     {children}
                 </div>
             </body>
