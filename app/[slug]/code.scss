@@ -1,3 +1,6 @@
+@use "@ui/variables";
+@use 'sass:color';
+
 /**
  * atom-dark theme for `prism.js`
  * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
@@ -20,6 +23,7 @@
      -moz-hyphens: none;
      -ms-hyphens: none;
      hyphens: none;
+     font-size: 18px;
  }
  
  /* Code blocks */
@@ -27,23 +31,25 @@
      padding: 1em;
      margin: .5em 0;
      overflow: auto;
-     border-radius: 0.3em;
+     border-radius: 5px;
+     border: 1px solid variables.$light;
  }
  
  :not(pre) > code[class*="language-"],
  pre[class*="language-"] {
-     background: #1d1f21;
+     background: #00000070;
  }
  
  /* Inline code */
  :not(pre) > code[class*="language-"] {
-     padding: .1em;
-     border-radius: .3em;
+    padding: 2px;
+    padding-inline: 5px;
+    border-radius: 5px;
  }
 
  :not(pre) > code:not([class*="language-"]) {
     border-radius: 5px;
-    background-color: rgba(31, 97, 136, 0.699);
+    background-color: color.change(variables.$primary-cyan, $alpha: 0.6, $lightness: 50%);
     padding: 2px;
     padding-inline: 5px;
 }

@@ -23,7 +23,8 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@ui/*": ["src/ui/*"]
     }
   },
   "include": [

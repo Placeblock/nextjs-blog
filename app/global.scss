@@ -1,0 +1,53 @@
+@use "@ui/variables";
+@use 'sass:color';
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/Montserrat.ttf") format("woff2 supports variations"),
+    url("/Montserrat.ttf") format("woff2-variations");
+    font-weight: 100, 200, 300, 800;
+}
+
+body, html {
+    margin: 0px;
+    background: variables.$background; 
+    background-repeat: no-repeat;
+    min-height: 100%;
+    width: 100%;
+    color: variables.$light;
+    font-family: "Montserrat";
+    display: flex;
+    justify-content: center;
+}
+
+#blog {
+    width: min(700px, 90%);
+}
+
+a {
+    color: color.adjust(variables.$primary-cyan, $lightness: 30%);
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgb(54, 54, 54);
+    transition: text-decoration-color 0.2s ease-in-out;
+}
+
+a:hover {
+    text-decoration-color: color.adjust(variables.$primary-cyan, $lightness: 30%);
+}
+
+.gradient {
+    background: -webkit-linear-gradient(0deg, color.adjust(variables.$primary-violet, $lightness: 30%), color.adjust(variables.$primary-cyan, $lightness: 30%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: variables.$light;
+}
+
+h1 {
+    font-size: 32px;
+}

@@ -1,39 +1,48 @@
 import React from "react";
-import { getBlogPostData } from "lib/posts";
+import { getBlogPostData } from "src/posts";
 import Post from "./post";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export default async function Page({ params }: { params: { slug: string } }) {
-    const slug = params.slug
+    const slug = decodeURIComponent(params.slug)
 
-    const data = await getBlogPostData(slug);
+    const post = await getBlogPostData(slug);
+
+    if (!post.data.isPublished) {
+        return notFound();
+    }
 
     return <div>
-        <h1>{data.frontmatter["title"]}</h1>
-        <Post code={data.code}/>
+        <h1 className="gradient" id="post-title">{post.data.title}</h1>
+        <p id="post-publish-date">Published on {post.data.publishedOn.toLocaleString()}</p>
+        <hr style={{marginBlock: "50px"}}></hr>
+        <Post code={post.code}/>
+        <hr style={{marginBlock: "50px"}}></hr>
+        <p style={{textAlign: "center"}}>Written with ♥ by Felix</p>
     </div>
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const slug = params.slug
+    const slug = decodeURIComponent(params.slug)
 
-    const data = await getBlogPostData(slug);
+    const post = await getBlogPostData(slug);
 
     return {
-        title: data.frontmatter["title"],
+        title: post.data["title"],
         applicationName: "CodelixBlog",
         authors: [{name: "Felix", url: "https://codelix.de"}],
         creator: "Felix",
-        description: data.frontmatter["description"],
+        description: post.data["description"],
         openGraph: {
-            title: data.frontmatter["title"],
+            title: post.data["title"],
             authors: ["Felix"],
-            description: data.frontmatter["description"],
+            description: post.data["description"],
             type: "article",
             images: [{
-                url: data.frontmatter["banner"]
+                url: post.data.banner
             }],
-            publishedTime: data.frontmatter["publish_date"]
+            publishedTime: post.data.publishedOn.toISOString()
         }
     }
 }

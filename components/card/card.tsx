@@ -1,20 +1,20 @@
 import { ReactNode } from "react";
 import "./card.scss";
 
-export function Card({children}: {children: ReactNode}) {
-    return <div className="card">
+export function Card({children, className}: {children: ReactNode, className?: string}) {
+    return <div className={`card ${className}`}>
         {children}
     </div>
 };
 
-export function ErrorCard({children}: {children: ReactNode}) {
-    return <div className="card special-card error-card">
+export function ErrorCard({children, className}: {children: ReactNode, className?: string}) {
+    return <div className={`card special-card error-card ${className}`}>
         {children}
     </div>
 };
 
-export function PrimaryCard({children}: {children: ReactNode}) {
-    return <div className="card special-card primary-card">
+export function InfoCard({children, className}: {children: ReactNode, className?: string}) {
+    return <div className={`card special-card info-card ${className}`}>
         {children}
     </div>
 };

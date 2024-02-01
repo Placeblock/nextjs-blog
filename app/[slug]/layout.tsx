@@ -4,7 +4,7 @@ export default function PostLayout({
     children: React.ReactNode
 }) {
     return (
-        <section id="post">
+        <section>
             {children}
         </section>
     )

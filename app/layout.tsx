@@ -1,4 +1,4 @@
-import "./style.scss";
+import "./global.scss";
 import Header from "@components/header/header";
 
 

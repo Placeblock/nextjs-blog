@@ -1,0 +1,12 @@
+@use 'sass:color';
+
+$primary-violet: rgba(78, 31, 136);
+$primary-cyan: rgba(31, 97, 136);
+$primary-blue: rgba(31, 50, 136);
+
+$background: radial-gradient(max(50vw, 400px) circle at 30% 200px, color.change($primary-violet, $alpha: 0.23) 0%, rgba(0,0,0,0) 100%),
+    radial-gradient(max(50vw, 400px) circle at 80% 400px, color.change($primary-cyan, $alpha: 0.23) 0%, rgba(0,0,0,0) 100%),
+    radial-gradient(max(50vw, 400px) circle at 20% 800px, color.change($primary-blue, $alpha: 0.23) 0%, rgba(0,0,0,0) 100%),
+    rgb(3, 3, 3);
+
+$light: rgb(224, 224, 224);

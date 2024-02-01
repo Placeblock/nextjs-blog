@@ -24,6 +24,10 @@
         margin-block: 20px;
     }
 
+    strong {
+        color: white;
+    }
+
     h1:first-child, h2:first-child,h3:first-child,h4:first-child,p:first-child {
         margin-top: 10px;
     }
@@ -31,4 +35,12 @@
     h1:last-child, h2:last-child,h3:last-child,h4:last-child,p:last-child {
         margin-bottom: 10px;
     }
+
+    img {
+        border-radius: 5px;
+    }
+}
+
+#post-publish-date {
+    font-size: 14px;
 }

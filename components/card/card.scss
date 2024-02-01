@@ -1,6 +1,6 @@
 .card {
     border: 1px solid rgb(224, 224, 224);
-    padding: 10px;
+    padding: 20px;
     margin-block: 20px;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.2);
@@ -8,6 +8,7 @@
 }
 
 .special-card {
+    margin-block: 30px;
     &::before {
         border: 1px solid rgb(224, 224, 224);
         width: 40px;
@@ -37,11 +38,11 @@
     content: "!";
 }
 
-.primary-card {
+.info-card {
     border-color: rgb(31, 97, 136);
 }
 
-.primary-card::before {    
+.info-card::before {    
     border-color: rgb(31, 97, 136);
     content: "i";
 }
