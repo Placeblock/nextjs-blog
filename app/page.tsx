@@ -5,7 +5,7 @@ import { memo } from "react";
 import { Metadata } from "next";
 import "./style.scss";
 
-export const revalidate = 60
+export const revalidate = 600
 
 export default async function Page() {
     console.log("GET PAGES LIST")

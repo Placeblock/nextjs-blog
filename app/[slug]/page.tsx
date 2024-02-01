@@ -4,7 +4,7 @@ import Post from "./post";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export const revalidate = 60
+export const revalidate = 600
 
 export default async function Page({ params }: { params: { slug: string } }) {
     console.log("LOAD POST")
