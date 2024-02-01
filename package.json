@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "next dev -p 9155",
+    "build": "next build -p 9155",
+    "start": "next start -p 9155",
     "lint": "next lint"
   },
   "author": "",
