@@ -21,7 +21,8 @@ body, html {
 }
 
 #blog {
-    width: min(700px, 90%);
+    width: min(700px, 100%);
+    margin-inline: 25px;
 }
 
 a, .underlined {
