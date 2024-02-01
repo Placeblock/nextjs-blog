@@ -5,6 +5,7 @@ import matter from "gray-matter"
 import rehypePrism from '@mapbox/rehype-prism'
 import remarkMath from "remark-math"
 import rehypeKatex from 'rehype-katex'
+import imageMetadata from "./imageMetadata"
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -14,8 +15,8 @@ export async function getBlogPostData(slug: string): Promise<{code: string, data
 
     const {code, frontmatter} = await bundleMDX({source: source, mdxOptions: (options, fm) => {
         // Add remark Plugins and rehype Plugins
-        options.remarkPlugins = [...(options.remarkPlugins ?? []), ...[rehypePrism, rehypeKatex]]
-        options.rehypePlugins = [...(options.rehypePlugins ?? []), ...[remarkMath]]
+        options.remarkPlugins = [...(options.remarkPlugins ?? []), ...[remarkMath]]
+        options.rehypePlugins = [...(options.rehypePlugins ?? []), ...[imageMetadata, rehypePrism, rehypeKatex]]
         return options;
     }})
 

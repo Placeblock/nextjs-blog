@@ -1,0 +1,51 @@
+---
+title: "A gentle study of dungeon generation"
+description: "There is plenty of information on the internet regarding dungeon generation. 
+            However, good dungeons often require more complex algorithms. I experimented with an
+            alternative solution which I think produces stunning results without much complexity!"
+banner: "https://cdn.pixabay.com/photo/2015/07/26/16/35/business-861325_960_720.jpg"
+isPublished: true
+publishedOn: 2024-02-01T14:59:00
+---
+
+I am currently working on a Minecraft server network with a development team. 
+For this we implemented many different game modes one of which is played inside
+some sort of generated dungeon. At first we began to build them on our own, but
+then we thought about generationg the dungeons procedurally. This means to create
+data with defined algorithms, rather then by yourself. In our case this data is
+a dungeon. For a couple days I searched the internet for algorithms to generate 
+interesting dungeons. I stumbled over the so called tunneling algorithm. 
+This algorithms has little digital miners with specific rules which dig tunnels 
+and rooms. However, this algorithm is rather hard to implement. 
+
+Then I looked into dungeon generation using B-Trees. B-Trees are quite simple to understand. 
+You take a square, which is the boundary for the dungeon. Then you split this square in half somewhere. 
+The algorithm chooses between horizontal and vertical split as well as the split position randomly. 
+This step is repeated for each of the new squares until a fixed minimum size is reached. 
+Each square is the bounding box of one room. All you have to do now is to connect the 
+rooms using lines as paths and the dungeon is fully generated.
+
+![](bsp-tree.png)
+
+This works as expected, but it does not look really natural. There are often many rooms 
+connected by a single straight path. The biggest disadvantage with this algorithm is that 
+a path does not lead back to other paths but just has a dead end somewhere. It looks like 
+a circuit with one controller in the center and many cables which start at the controller 
+and fork but never join back together. This is not what you expect from an interesting dungeon. 
+
+In math and software engineering there is this topic called “graph theory” which is all about 
+little dots called nodes connected by edges, like a computer network. 
+
+In the end a dungeon 
+is nothing else then dots (rooms) connected by edges (paths). In math and software engineering 
+there is this topic called “graph theory” which is all about little dots called nodes 
+connected by edges, like a computer network. In the end a dungeon is nothing else then 
+dots (rooms) connected by edges (paths). 
+
+A user in an online forum mentioned the relative neighborhood graph in connection with 
+dungeon generation1. There is some information about this graph in the internet, but 
+not much especially if it comes to dungeon generation. The Relative Neighborhood 
+Graph looks a lot more natural and allows loops inside the graph. I experimented 
+with it a lot. My goal with this post is to share my achievements and experiences 
+with you and explain additional algorithms to create a fully fledged dungeon.
+

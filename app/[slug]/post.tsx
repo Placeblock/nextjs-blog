@@ -12,12 +12,10 @@ export default function Post({code}) {
 
     const Component = useMemo(() => getMDXComponent(code), [code]);
 
-    return <div id="post"><Component components={{
+    return <div id="post" style={{position: "relative"}}><Component components={{
         Card, InfoCard, ErrorCard,
         img: (props) => (
             <Image
-                width={800}
-                height={500}
                 style={{width: "100%", height: "auto"}}
                 {...(props as ImageProps)}
             />
