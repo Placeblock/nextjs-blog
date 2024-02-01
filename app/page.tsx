@@ -11,7 +11,7 @@ export default async function Page() {
     console.log("GET PAGES LIST")
     const posts = await getBlogPostsMeta();
     return <div>{ 
-        posts.filter(p => p.data.isPublished).map((p, i) => <Link href={p.slug}>
+        posts.filter(p => p.data.isPublished).map((p, i) => <Link className="post-list-link" href={p.slug}>
             <PostCard key={i} post={p} />
         </Link>)
     }</div>
@@ -21,6 +21,7 @@ const PostCard = memo(({post}: {post: Post}) => {
     return <Card className="post-card">
         <h4 className="post-list-title gradient">{post.data.title}</h4>
         <p className="post-list-description">{post.data.description}</p>
+        <p className="underlined" style={{marginBottom: "0px"}}>🡒 Mehr lesen</p>
     </Card>
 });
 

@@ -24,14 +24,15 @@ body, html {
     width: min(700px, 90%);
 }
 
-a {
+a, .underlined {
     color: color.adjust(variables.$primary-cyan, $lightness: 30%);
+    text-decoration: underline;
     text-decoration-thickness: 2px;
     text-decoration-color: rgb(54, 54, 54);
     transition: text-decoration-color 0.2s ease-in-out;
 }
 
-a:hover {
+a:hover, .underlined:hover {
     text-decoration-color: color.adjust(variables.$primary-cyan, $lightness: 30%);
 }
 

@@ -7,7 +7,6 @@
 }
 
 .post-list-description {
-    margin-bottom: 0px;
     color: variables.$light;
 }
 
@@ -17,4 +16,8 @@
 
 .post-card:hover {
     scale: 1.02;
+}
+
+.post-list-link {
+    text-decoration: none;
 }
