@@ -4,7 +4,10 @@ import Post from "./post";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+export const revalidate = 30
+
 export default async function Page({ params }: { params: { slug: string } }) {
+    console.log("LOAD POST")
     const slug = decodeURIComponent(params.slug)
 
     const post = await getBlogPostData(slug);
@@ -30,6 +33,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
     return {
         title: post.data["title"],
+        metadataBase: new URL("https://blog.codelix.de"),
         applicationName: "CodelixBlog",
         authors: [{name: "Felix", url: "https://codelix.de"}],
         creator: "Felix",
@@ -46,6 +50,3 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         }
     }
 }
-
-export const dynamic = "force-static"
-export const revalidate = 60;

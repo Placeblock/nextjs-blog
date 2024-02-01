@@ -4,13 +4,14 @@ import { Card } from "@components/card/card";
 import { memo } from "react";
 import "./style.scss";
 
-export const revalidate = 60
+export const revalidate = 30
 
 export default async function Page() {
+    console.log("GET PAGES LIST")
     const posts = await getBlogPostsMeta();
     return <div>{ 
         posts.filter(p => p.data.isPublished).map((p, i) => <Link href={p.slug}>
-            <PostCard post={p} />
+            <PostCard key={i} post={p} />
         </Link>)
     }</div>
 }

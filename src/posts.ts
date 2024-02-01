@@ -18,7 +18,6 @@ export async function getBlogPostData(slug: string): Promise<{code: string, data
         options.rehypePlugins = [...(options.rehypePlugins ?? []), ...[remarkMath]]
         return options;
     }})
-    console.log(code);
 
     return {code, data: (frontmatter as Metadata)};
 }
