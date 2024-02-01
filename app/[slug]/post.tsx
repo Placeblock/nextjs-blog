@@ -21,6 +21,9 @@ export default function Post({code}) {
                 style={{width: "100%", height: "auto"}}
                 {...(props as ImageProps)}
             />
+        ),
+        a: (props) => (
+            <a {...props} target="_blank"></a>
         )
     }} /></div>;
 
