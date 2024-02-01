@@ -22,7 +22,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <hr style={{marginBlock: "50px"}}></hr>
         <Post code={post.code}/>
         <hr style={{marginBlock: "50px"}}></hr>
-        <p style={{textAlign: "center"}}>Written with ♥ by Felix</p>
+        <p style={{textAlign: "center"}}>Written and developed with ♥ by Felix</p>
     </div>
 }
 
