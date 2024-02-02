@@ -5,6 +5,7 @@ export default function PostLayout({
 }) {
     return (
         <section>
+            <script src="https://www.geogebra.org/apps/deployggb.js"></script>
             {children}
         </section>
     )

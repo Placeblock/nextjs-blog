@@ -6,6 +6,7 @@ import "./math.css";
 import { getMDXComponent } from 'mdx-bundler/client';
 import { useMemo } from 'react';
 import {Card, InfoCard, ErrorCard} from "@components/card/card"
+import GeoGebra from "@components/geogebra/geogebra"
 import Image, { ImageProps } from "next/image";
 
 export default function Post({code}) {
@@ -14,9 +15,10 @@ export default function Post({code}) {
 
     return <div id="post" style={{position: "relative"}}><Component components={{
         Card, InfoCard, ErrorCard,
+        GeoGebra,
         img: (props) => (
             <Image
-                style={{width: "100%", height: "auto"}}
+                style={{maxWidth: "100%", height: "auto"}}
                 {...(props as ImageProps)}
             />
         ),
