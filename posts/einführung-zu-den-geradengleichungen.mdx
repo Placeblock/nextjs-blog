@@ -1,9 +1,79 @@
 ---
 title: "Einführung zu den Geradengleichungen"
-description: "Geradengleichungen sind ein fundamentaler bestandteil der Geometrie. Hier ist eine kleine Einführung :)"
+description: "Geradengleichungen sind ein fundamentaler Bestandteil der Geometrie. Hier ist eine kleine Einführung :)"
 banner: "https://cdn.pixabay.com/photo/2015/11/05/08/21/geometry-1023846_960_720.jpg"
-isPublished: true
+isPublished: false
 publishedOn: 2024-02-01T14:59:00
 ---
 
-<GeoGebra src="complex-multiplication"/>
+<InfoCard>
+	Für diese Einführung solltet ihr euch ein grundlegendes Verständnis von Vektoren und deren Rechenoperationen angeeignet haben. 
+</InfoCard>
+
+Gleichungen kennt ihr sicher schon im Sinne der Funktionen. Jede Funktion ist eine Gleichung z.B. $$y=x^2$$.
+Diese Funktion gibt für jeden Wert x einene bestimmten Wert y zurück. Wenn jetzt die Frage gestellt wird,
+ob ein bestimmter Punkt auf diesem Graph $$Gf$$ liegt, setzen wir einfach für x ein und prüfen, ob der
+y Wert dem unseres Punktes entspricht.
+
+Jetzt wollen wir unseren Blick von den Funktionen abwenden. Wir wollen nicht prüfen, ob ein Punkt auf einer
+Funktion liegt, sondern ob ein Punkt auf einer Gerade im Raum liegt. Ähnlich wie wir eine Gleichung für unsere
+Funktion aufgestellt haben, können wir auch für unsere Gerade eine Gleichung aufstellen. Die Geradengleichung.
+
+<GeoGebra src="s99jjrcq"/>
+
+Hier seht ihr eine Gerade, welche durch einen Punkt und einen Richtungsvektor ausgedrückt wird. Der Punkt
+gibt an, wo die Gerade liegt. Der  Richtungsvektor zeigt, in welche Richtung die Gerade verläuft.
+Nutzt die Simulation und verschiebt Punkt und Richtungsvektor, um zu verstehen wie sie funktionieren und
+was die Verschiebung bewirkt.
+
+<InfoCard>
+	Geraden können auch auf andere weise beschrieben werden. Zwei Punkte beispielsweise können eine
+	Gerade eindeutig definieren.
+</InfoCard>
+
+Wir drücken jetzt den Punkt, welcher unsere Gerade beschreibt, als Vektor aus. Wenn wir jetzt
+zu diesem Vektor unseren Richtungsvektor addieren, erhalten wir einen Punkt auf der Gerade.
+Durch das skalieren des Richtungsvektors erhalten wir unterschiedliche Punkte auf der Geraden.
+
+<GeoGebra src="test123" />
+
+Diese Berechnung kann man nun leicht als Gleichung ausdrücken.
+
+$$X = u+\lambda*p $$
+
+Voila, unsere Geradengleichung. $$u$$ ist der Vektor zu unserem Punk.
+$$p$$ ist der Richtungsvektor, welcher die Gerade angibt. $$\lambda$$ ist der Wert,
+welcher den Richtungsvektor skaliert. So können wir mit dieser Funktion alle beliebige
+Punkte auf der Gerade ausdrücken.
+
+Ähnlich wie bei den Algebraischen Funktionen können wir allerdings auch hier prüfen,
+ob ein bestimmter Punkt auf der Geraden liegt. 
+
+### Beispiel
+Unser Punkt auf der Geraden ist $$p = (2/3)$$
+Der Richtungsvektor ist $$u = (1,1)$$
+Der zu prüfende Punkt ist (4,5)
+
+Nun nehmen wir unsere Gleichung und ersetzen $$X$$ mit dem zu prüfenden Punkt. 
+$$u$$ und $$p$$ sind bereits durch unsere Gerade definiert. Dadurch ergibt sich:
+$$(4/5) = (2/3)+\lambda*(1/1)
+Jetzt gilt es, Lambda auszurechnen. Stellt sich nur die Frage wie das gehen soll.
+Um Lambda auszurechnen, teilen wir unsere Gleichung in zwei Teilgleichungen auf, die
+sozusagen Gleichungen der einzelnen Achsen darstellen.
+
+1. $$ 4 = 2+\lambda*1
+2. $$ 5 = 3+\lambda*1
+
+Die 1. Gleichung behandelt im Endeffekt die X-Komponente der Vektoren, die 2. Gleichung
+die Y-Komponente.
+Sollte der Punkt auf der Geraden liegen, muss $$\lambda$$ für alle Achsen gleich sein.
+Diese Simulation zeigt, dass ein Punkt nicht auf der Geraden liegt, falls die einzelnen
+Komponenten (X und Y) des Richtungsvektors unterschiedlich skaliert werden. Spiele mit den
+Schiebereglern und verstehe das Prinzip!
+
+<GeoGebra src="awdwada"></GeoGebra>
+
+Für alle Achsen muss der Richtungsvektor gleich skaliert werden. Wenn wir die obigen
+Gleichungen umformen erhalten wir $$\lambda = 2$$ für beide Gleichungen.
+Daraus können wir schließen, dass der Punkt auf der Geraden liegt.
+
