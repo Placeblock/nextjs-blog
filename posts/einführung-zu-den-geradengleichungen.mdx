@@ -3,14 +3,14 @@ title: "Einführung zu den Geradengleichungen"
 description: "Geradengleichungen sind ein fundamentaler Bestandteil der Geometrie. Hier ist eine kleine Einführung :)"
 banner: "https://cdn.pixabay.com/photo/2015/11/05/08/21/geometry-1023846_960_720.jpg"
 isPublished: true
-publishedOn: 2024-02-03T01:53:00
+publishedOn: 2024-02-03T00:53:00
 ---
 
 <InfoCard>
 	Für diese Einführung solltet ihr euch ein grundlegendes Verständnis von Vektoren und deren Rechenoperationen angeeignet haben. 
 </InfoCard>
 
-Gleichungen kennt ihr sicher schon im Sinne der Funktionen. Jede **Funktion** ist eine Gleichung z.B. $$y=x^2$$.
+Gleichungen kennt ihr sicher schon im Sinne der Funktionen. Jede **Funktion** ist eine Gleichung z.B. $$y=2*x+5$$.
 Diese Funktion **gibt für jeden Wert $$x$$ einen bestimmten Wert $$y$$ zurück**. Wenn jetzt die Frage gestellt wird,
 ob ein Punkt auf diesem Graph $$G_f$$ liegt, setzen wir einfach für $$x$$ ein und prüfen, ob der
 $$y$$ Wert dem unseres Punktes entspricht.
@@ -53,16 +53,16 @@ Punkte auf der Gerade** ausdrücken.
 Ähnlich wie bei den algebraischen Funktionen können wir allerdings auch hier prüfen,
 ob ein bestimmter Punkt auf der Geraden liegt. Das soll mit einem Beispiel erklährt werden.
 
-Unser Punkt auf der Geraden ist $$p = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$$.
-Der Richtungsvektor ist $$u = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$$.
+Unser Punkt auf der Geraden ist $$\overrightarrow{p} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$$.
+Der Richtungsvektor ist $$\overrightarrow{u} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$$.
 Der zu prüfende Punkt ist $$\begin{pmatrix} 4 \\ 5 \end{pmatrix}$$.
 
-Nun nehmen wir unsere Gleichung und ersetzen $$X$$ mit dem zu prüfenden Punkt. 
+Nun nehmen wir unsere Gleichung und ersetzen $$\overrightarrow{X}$$ mit dem zu prüfenden Punkt. 
 $$\overrightarrow{p}$$ und $$\overrightarrow{u}$$ sind bereits durch unsere Gerade definiert. Dadurch ergibt sich:
 $$\begin{pmatrix} 4 \\ 5 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}+\lambda*\begin{pmatrix} 1 \\ 1 \end{pmatrix}$$
 Jetzt gilt es, $$\lambda$$ auszurechnen. Stellt sich nur die Frage wie das gehen soll.
 Um $$\lambda$$ auszurechnen, teilen wir unsere Gleichung in zwei Teilgleichungen auf, die
-sozusagen Gleichungen der einzelnen Achsen darstellen.
+sozusagen Gleichungen der einzelnen Achsen darstellen. (Warum wird im folgenden erläutert)
 
 1. $$ 4 = 2+\lambda*1 $$
 2. $$ 5 = 3+\lambda*1 $$
@@ -79,4 +79,11 @@ könnt ihr die einzelnen komponenten des Richtungsvektors einzeln skalieren!
 **Für alle Achsen muss der Richtungsvektor gleich skaliert werden**. Wenn wir die obigen
 Gleichungen umformen erhalten wir $$\lambda = 2$$ für beide Gleichungen.
 Daraus können wir schließen, dass der Punkt auf der Geraden liegt.
+
+<InfoCard>
+	Jetzt frag ihr euch vielleicht, warum man nicht einfach die bereits bekannte algebraische Geradengleichung
+	$$ y = m*x+t $$ verwendet, um das selbe Problem zu lösen.
+	Der eigentliche Vorteil dieser neuen Geradengleichung besteht darin, dass man sie **auch im drei-dimensionalen Raum**
+	anwenden kann. Das ist mit der algebraischen Gleichung nicht möglich.
+</InfoCard>
 
