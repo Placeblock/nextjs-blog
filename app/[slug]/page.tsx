@@ -17,7 +17,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     }
 
     return <div>
-        <h1 className="gradient" id="post-title">{post.data.title}</h1>
+        <h1 className="gradient" id="post-title" dangerouslySetInnerHTML={{__html: post.data.title}}></h1>
         <p id="post-publish-date">Published on {post.data.publishedOn.toLocaleString()}</p>
         <hr style={{marginBlock: "50px"}}></hr>
         <Post code={post.code}/>

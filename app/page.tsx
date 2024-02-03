@@ -19,7 +19,7 @@ export default async function Page() {
 
 const PostCard = memo(({post}: {post: Post}) => {
     return <Card className="post-card">
-        <h4 className="post-list-title gradient">{post.data.title}</h4>
+        <h4 className="post-list-title gradient" dangerouslySetInnerHTML={{__html: post.data.title}}></h4>
         <p className="post-list-description">{post.data.description}</p>
         <p className="underlined" style={{marginBottom: "0px"}}>🡒 Mehr lesen</p>
     </Card>
