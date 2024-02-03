@@ -48,7 +48,8 @@ export default memo(function GeoGebra({ src, id = "ggb-element" }: { src: string
         playButton: false,
         showFullScreenButton: true,
         width: 500,
-        height: 300
+        height: 300,
+        editorBackgroundColor: "#000000"
     }
     useEffect(() => {
         // @ts-ignore
