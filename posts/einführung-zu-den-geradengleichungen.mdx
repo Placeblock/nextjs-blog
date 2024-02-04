@@ -10,10 +10,10 @@ publishedOn: 2024-02-03T00:53:00
 	Für diese Einführung solltet ihr euch ein grundlegendes Verständnis von Vektoren und deren Rechenoperationen angeeignet haben. 
 </InfoCard>
 
-Gleichungen kennt ihr sicher schon, z.B. die Funktion $$y=2*x+5$$ (Funktionen sind auch Gleichungen).
+Gleichungen kennt ihr sicher schon, z.B. die Funktion $$y=2\cdotx+5$$ (Funktionen sind auch Gleichungen).
 Diese Funktion **gibt für jeden Wert $$x$$ einen bestimmten Wert $$y$$ zurück**. Wenn jetzt die Frage gestellt wird,
-ob ein Punkt auf dem Graph $$G_f$$ liegt, setzen wir einfach für $$x$$ ein und prüfen, ob der
-$$y$$ Wert dem unseres Punktes entspricht.
+ob ein Punkt $$P(x_o/y_o) auf dem Graph $$G_f$$ liegt, setzen wir einfach $$x_o$$ für $$x$$ ein und prüfen, ob der
+durch die Funktion errechnete Wert $$y$$ der Koordinate $$y_o$$ unseres Punktes entspricht.
 
 Jetzt wollen wir unseren Blick von den algebraischen Funktionen abwenden. Wir wollen nicht prüfen, ob ein Punkt auf dem Graphen
 einer Funktion liegt, sondern ob ein Punkt auf einer Gerade im Raum liegt. Ähnlich wie wir eine Gleichung für unsere
@@ -43,7 +43,7 @@ Durch das skalieren des Richtungsvektors erhalten wir unterschiedliche Punkte au
 
 Diese Berechnung kann man nun leicht als Gleichung ausdrücken.
 
-$$\overrightarrow{X} = \overrightarrow{p}+\lambda*\overrightarrow{u} $$
+$$\overrightarrow{X} = \overrightarrow{p}+\lambda\cdot\overrightarrow{u} $$
 
 Voila, unsere **Geradengleichung**. $$\overrightarrow{p}$$ ist der Vektor zu unserem Punkt.
 $$\overrightarrow{u}$$ ist der Richtungsvektor, welcher die Gerade angibt. $$\lambda$$ ist der Wert,
@@ -59,13 +59,13 @@ Der zu prüfende Punkt ist $$\begin{pmatrix} 4 \\ 5 \end{pmatrix}$$.
 
 Nun nehmen wir unsere Gleichung und ersetzen $$\overrightarrow{X}$$ mit dem zu prüfenden Punkt. 
 $$\overrightarrow{p}$$ und $$\overrightarrow{u}$$ sind bereits durch unsere Gerade definiert. Dadurch ergibt sich:
-$$\begin{pmatrix} 4 \\ 5 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}+\lambda*\begin{pmatrix} 1 \\ 1 \end{pmatrix}$$
+$$\begin{pmatrix} 4 \\ 5 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}+\lambda\cdot\begin{pmatrix} 1 \\ 1 \end{pmatrix}$$
 Jetzt gilt es, $$\lambda$$ auszurechnen. Stellt sich nur die Frage wie das gehen soll.
 Um $$\lambda$$ auszurechnen, teilen wir unsere Gleichung in zwei Teilgleichungen auf, die
 sozusagen Gleichungen der einzelnen Achsen darstellen. (Warum wird im folgenden erläutert)
 
-1. $$ 4 = 2+\lambda*1 $$
-2. $$ 5 = 3+\lambda*1 $$
+- $$ 4 = 2+\lambda\cdot1 $$
+- $$ 5 = 3+\lambda\cdot1 $$
 
 Die 1. Gleichung behandelt im Endeffekt die X-Komponente der Vektoren, die 2. Gleichung
 die Y-Komponente.
@@ -82,7 +82,7 @@ Daraus können wir schließen, dass der Punkt auf der Geraden liegt.
 
 <InfoCard>
 	Jetzt frag ihr euch vielleicht, warum man nicht einfach die bereits bekannte algebraische Geradengleichung
-	$$ y = m*x+t $$ verwendet, um das selbe Problem zu lösen.
+	$$ y = m\cdotx+t $$ verwendet, um das selbe Problem zu lösen.
 	Der eigentliche Vorteil dieser neuen Geradengleichung besteht darin, dass man sie **auch im drei-dimensionalen Raum**
 	anwenden kann. Das ist mit der algebraischen Gleichung nicht möglich.
 </InfoCard>
