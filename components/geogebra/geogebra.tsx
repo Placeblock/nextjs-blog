@@ -52,11 +52,15 @@ export default memo(function GeoGebra({ src, id = "ggb-element" }: { src: string
         editorBackgroundColor: "#000000"
     }
     useEffect(() => {
-        // @ts-ignore
-        if (!deployggbLoaded && !window.GGBApplet) {
-            loadScript(id).then(() => {
-                setDeployggbLoaded(true);
-            })
+        if (!deployggbLoaded) {
+        	// @ts-ignore
+			if (!window.GGBApplet) {
+            	loadScript(id).then(() => {
+                	setDeployggbLoaded(true);
+            	})	
+			} else {
+				setDeployggbLoaded(true);
+			}
         }
         return () => {
             removeScript(id);
