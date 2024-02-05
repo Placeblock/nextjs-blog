@@ -35,12 +35,12 @@ function removeScript(id: string) {
     }
 };
 
-export default memo(function GeoGebra({ src, id = "ggb-element" }: { src: string, id: string }) {
+export default memo(function GeoGebra({ src, id = "ggb-element", type="graphing" }: { src: string, id: string, type:string }) {
     const geoRef = useRef();
     const [deployggbLoaded, setDeployggbLoaded] = useState(false);
 
     const params = {
-        "appName": "graphing",
+        "appName": type,
         filename: `/GeoGebra/applets/${src}.ggb`,
         allowStyleBar: false,
         showResetIcon: true,

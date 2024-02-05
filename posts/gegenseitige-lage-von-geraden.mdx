@@ -1,0 +1,130 @@
+---
+title: "Gegenseitige Lage von Geraden"
+description: "Schonmal windschiefe häußer gesehen? Die haben bestimmt auch einige windschiefe geraden!"
+banner: "https://cdn.pixabay.com/photo/2015/11/15/07/47/geometry-1044090_960_720.jpg"
+isPublished: true
+publishedOn: 2024-02-03T00:53:00
+---
+
+In diesem Beitrag wollen wir uns ein wenig mit Geraden beschäftigen ;).
+
+<InfoCard>
+    Ihr solltet ein Grundverständnis von Geraden haben.
+    Als Vorwissen ist auch [dieser](/einführung-zu-den-geradengleichungen) Beitrag
+    über Geradengleichungen äußerst hilfreich!
+</InfoCard>
+
+Geraden existieren, no shit sherlock! Aber wo sind sie? Wo liegen sie? Wie liegen sie, vorallem zueinander?
+Das gilt es heute herauszufinden.
+
+Im **Zweidimensionalen** ist das alles noch ein wenig einfacher.
+Dort gibt es zwei möglichkeiten:
+
+1. Sie schneiden sich
+2. Sie schneiden sich nicht
+
+### Zweidimensionaler Raum
+
+Wenn sich zwei Geraden im Zweidimensionalen Raum **nicht schneiden**, müssen sie
+automatisch **parallel** zueinander liegen! Das verdeutlicht auch diese GeoGebra Simulation:
+
+<GeoGebra src="lines-2d-space" id="1"/>
+
+Hier seht ihr 3 Geraden. Zwei dieser Geraden sind parallel zueinander (f und h).
+Die Gerade g schneidet die beiden anderen Geraden h und f.
+An diesem Punkte sollte es recht deutlich sein, dass sobald zwei Geraden
+**parallel** zueinander verlaufen, sie sich **nie schneiden** werden.
+Sobald f und h auch nur ein ganz, ganz, ganz kleines bisschen "nicht-parallel" zueinander
+verlaufen, würden sie sich irgendwann ganz, ganz, ganz weit weg schneiden.
+g und f, oder auch g und h, sind nicht parallel zueinander und schneiden sich deshalb.
+
+### Dreidimensionaler Raum
+
+Im **dreidimensionalen Raum** sieht das jetzt alles ein klein wenig anders aus.
+Um die Problematik zu verdeutlichen stellen wir uns die Frage: Schneiden sich zwei
+Geraden im dreidimensionalen Raum, sobald sie nicht parallel zueinander liegen?
+
+Anfags könnte es den Anschein machen, dass diese Aussage wahr ist:
+
+Zu sehen sind zwei Geraden, welche nicht parallel verlaufen und sich schneiden.
+Hier ist allerdings noch ein zweites Beispiel von zwei Geraden, welche genauso nicht
+parallel zueinander liegen.
+
+<GeoGebra src="line-3d-intersection" id="2" type="3d"/>
+
+<ErrorCard>
+    Bewege die dreidimensionalen GeoGebra-Simulationen, um ein Gefühl der Tiefe zu bekommen!
+</ErrorCard>
+
+Hier allerdings noch ein weiteres Beispiel:
+
+<GeoGebra src="line-3d-no-intersection" id="3" type="3d"/>
+
+Sieh an sieh an, schau schau (Kleine Känguru Chroniken Anspielung ;), zwei Geraden, welche
+**nicht parallel** zueinander liegen, aber sich trotzdem **nicht schneiden**.
+Sieht so aus, als würden die Dinge im Dreidimensionalen etwas anders funktionieren.
+
+Im Dreidimensionalen müssen wir tatsächlich **vier Fälle** unterscheiden!
+
+1. Zwei Geraden sind parallel zueinander und schneiden sich.
+Denkt mal kurz darüber nach. Zwei Geraden sind parallel, also verlaufen in die selbe Richtung.
+Gleichzeitig schneiden sie sich. Eine Idee? Sie müssen gleich sein!
+2. Zwei Geraden sind parallel zueinander, aber schneiden sich nicht.
+3. Zwei Geraden sind nicht parallel zueinander und schneiden sich.
+4. Zwei Geraden sind nicht parallel zueinander, aber schneiden sich nicht.
+Diese Möglichkeit wird auch "windschief" genannt. Daher die Beschreibung des Beitrags!
+
+Diese vier Möglichkeiten kann man verhältnismäßig einfach untersuchen.
+Zu Beginn wollen wir prüfen, ob zwei Geraden parallel zueinander verlaufen oder nicht.
+Das können wir mit der **linearen Abhängigkeit der Richtungsvektoren** prüfen!
+Sind sie linear abhängig (parallel zueinander), beziehen wir uns auf die ersten beiden Fälle.
+Nun können wir prüfen, ob die beiden Geraden sich schneiden, indem wir sie gleich setzen.
+Sind sie linear unabhängig, behandeln wir die unteren beiden Fälle.
+Auch dort setzen wir die Geraden gleich und prüfen auf **Schnittpunkte**.
+
+So können wir die gegenseitige Lage von Geraden im Raum analysieren!
+
+## Übungen
+In diesem Blogbeitrag ging es bis jetzt größtenteils um die **Theorie**. Aber: **Übung macht den Meister**! Also auf gehts!
+
+### Aufgabe 1 (Zweidimensionaler Raum)
+
+<Details summary="Aufgabe anzeigen">
+    Untersuche die gegenseitige Lage der Geraden g und h.
+
+    $$g: \overrightarrow{X} = \begin{pmatrix} 1 \\ 2 \end{pmatrix} + \lambda\cdot\begin{pmatrix} 4 \\ 2 \end{pmatrix} $$
+
+    $$h: \overrightarrow{X} = \begin{pmatrix} 0 \\ 5 \end{pmatrix} + \mu\cdot\begin{pmatrix} -2 \\ -1 \end{pmatrix} $$
+</Details>
+<Details summary="Lösung anzeigen">
+    Das ist die Lösung
+</Details>
+
+### Aufgabe 2 (Zweidimensionaler Raum)
+
+<Details summary="Aufgabe anzeigen">
+    Untersuche die gegenseitige Lage der Geraden g und h.
+
+    $$g: \overrightarrow{X} = \begin{pmatrix} 2 \\ 7 \end{pmatrix} + \lambda\cdot\begin{pmatrix} 1 \\ 1 \end{pmatrix} $$
+
+    $$h: \overrightarrow{X} = \begin{pmatrix} 0 \\ 5 \end{pmatrix} + \mu\cdot\begin{pmatrix} -1 \\ 1 \end{pmatrix} $$
+</Details>
+<Details summary="Lösung anzeigen">
+    Das ist die Lösung
+</Details>
+
+Ab hier geht es um Aufgaben im dreidimensionalen Raum. Du kannst dir die Lösung der Dritten Aufgabe gerne zur Hand nehmen, 
+falls du noch nicht genau weist, wie du die Theorie anwenden sollst.
+
+### Aufgabe 3 (Dreidimensionaler Raum)
+
+<Details summary="Aufgabe anzeigen">
+    Untersuche die gegenseitige Lage der Geraden g und h.
+
+    $$g: \overrightarrow{X} = \begin{pmatrix} 1 \\ 2 \\3 \end{pmatrix} + \lambda\cdot\begin{pmatrix} 2 \\ 1 \\ -2 \end{pmatrix} $$
+
+    $$h: \overrightarrow{X} = \begin{pmatrix} 3 \\ 3 \\ 1 \end{pmatrix} + \mu\cdot\begin{pmatrix} -1 \\ -0.5 \\ 1 \end{pmatrix} $$
+</Details>
+<Details summary="Lösung anzeigen">
+    Das ist die Lösung
+</Details>
