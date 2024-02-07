@@ -1,7 +1,6 @@
 import React from "react";
-import { getBlogPostData } from "src/posts";
+import { Metadata as BlogMeta, getBlogPostData } from "src/posts";
 import Post from "./post";
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 export const revalidate = 600
@@ -10,7 +9,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
     console.log("LOAD POST")
     const slug = decodeURIComponent(params.slug)
 
-    const post = await getBlogPostData(slug);
+    let post: {code: string, data: BlogMeta};
+    try {
+        post = await getBlogPostData(slug);
+    } catch (err) {return notFound();}
 
     if (!post.data.isPublished) {
         return notFound();

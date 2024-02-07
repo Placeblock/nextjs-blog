@@ -48,10 +48,10 @@ export async function getBlogPostsMeta(): Promise<Post[]> {
         data.push({slug, data: matterResult.data})
     }
     return data.sort((a, b) => {
-        if (a.date < b.date) {
-            return -1;
-        } else {
+        if (a.data.publishedOn < b.data.publishedOn) {
             return 1;
+        } else {
+            return -1;
         }
     })
 }

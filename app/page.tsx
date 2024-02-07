@@ -11,8 +11,8 @@ export default async function Page() {
     console.log("GET PAGES LIST")
     const posts = await getBlogPostsMeta();
     return <div>{ 
-        posts.filter(p => p.data.isPublished).map((p, i) => <Link className="post-list-link" href={p.slug}>
-            <PostCard key={i} post={p} />
+        posts.filter(p => p.data.isPublished).map((p, i) => <Link key={i} className="post-list-link" href={p.slug}>
+            <PostCard post={p} />
         </Link>)
     }</div>
 }
