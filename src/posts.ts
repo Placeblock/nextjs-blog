@@ -9,9 +9,15 @@ import imageMetadata from "./imageMetadata"
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-export async function getBlogPostData(slug: string): Promise<{code: string, data: Metadata}> {
+export async function getBlogPostData(slug: string): Promise<{code: string, data: Metadata} | null> {
     const fullPath = path.join(postsDirectory, `${slug}.mdx`);
-    const source = await fs.readFile(fullPath, "utf-8");
+    
+    let source: string;
+    try {
+        source = await fs.readFile(fullPath, "utf-8");
+    } catch(err) {
+        return null;
+    }
 
     const {code, frontmatter} = await bundleMDX({source: source, mdxOptions: (options, fm) => {
         // Add remark Plugins and rehype Plugins

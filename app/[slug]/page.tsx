@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata as BlogMeta, getBlogPostData } from "src/posts";
 import Post from "./post";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 export const revalidate = 600
 
@@ -9,12 +10,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
     console.log("LOAD POST")
     const slug = decodeURIComponent(params.slug)
 
-    let post: {code: string, data: BlogMeta};
-    try {
-        post = await getBlogPostData(slug);
-    } catch (err) {return notFound();}
-
-    if (!post.data.isPublished) {
+    let post = await getBlogPostData(slug);
+    if (post == null || !post.data.isPublished) {
         return notFound();
     }
 
@@ -32,6 +29,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const slug = decodeURIComponent(params.slug)
 
     const post = await getBlogPostData(slug);
+    if (post == null) {
+        return null;
+    }
 
     return {
         title: post.data["title"],
