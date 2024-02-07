@@ -1,8 +1,11 @@
 import { ReactNode, memo } from "react";
+import { Card } from "./card/card";
 
 export default memo(function Details({summary, children}: {summary: string, children: ReactNode}) {
-    return <details>
-        <summary>{summary}</summary>
-        {children}
-    </details>
+    return <Card>
+        <details>
+            <summary>{summary}</summary>
+            {children}
+        </details>
+    </Card>
 })

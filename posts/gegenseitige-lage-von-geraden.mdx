@@ -3,7 +3,7 @@ title: "Gegenseitige Lage von Geraden"
 description: "Schonmal windschiefe häußer gesehen? Die haben bestimmt auch einige windschiefe geraden!"
 banner: "https://cdn.pixabay.com/photo/2015/11/15/07/47/geometry-1044090_960_720.jpg"
 isPublished: true
-publishedOn: 2024-02-03T00:53:00
+publishedOn: 2024-02-07T14:55:00
 ---
 
 In diesem Beitrag wollen wir uns ein wenig mit Geraden beschäftigen ;).
@@ -47,8 +47,6 @@ Geraden im dreidimensionalen Raum, sobald sie nicht parallel zueinander liegen?
 Anfags könnte es den Anschein machen, dass diese Aussage wahr ist:
 
 Zu sehen sind zwei Geraden, welche nicht parallel verlaufen und sich schneiden.
-Hier ist allerdings noch ein zweites Beispiel von zwei Geraden, welche genauso nicht
-parallel zueinander liegen.
 
 <GeoGebra src="line-3d-intersection" id="2" type="3d"/>
 
@@ -56,7 +54,8 @@ parallel zueinander liegen.
     Bewege die dreidimensionalen GeoGebra-Simulationen, um ein Gefühl der Tiefe zu bekommen!
 </ErrorCard>
 
-Hier allerdings noch ein weiteres Beispiel:
+Hier ist allerdings noch ein zweites Beispiel von zwei Geraden, welche genauso nicht
+parallel zueinander liegen.
 
 <GeoGebra src="line-3d-no-intersection" id="3" type="3d"/>
 
@@ -77,12 +76,11 @@ Diese Möglichkeit wird auch "windschief" genannt. Daher die Beschreibung des Be
 Diese vier Möglichkeiten kann man verhältnismäßig einfach untersuchen.
 Zu Beginn wollen wir prüfen, ob zwei Geraden parallel zueinander verlaufen oder nicht.
 Das können wir mit der **linearen Abhängigkeit der Richtungsvektoren** prüfen!
+
 Sind sie linear abhängig (parallel zueinander), beziehen wir uns auf die ersten beiden Fälle.
-Nun können wir prüfen, ob die beiden Geraden sich schneiden, indem wir sie gleich setzen.
+Nun können wir prüfen, ob sich die beiden Geraden schneiden, indem wir sie gleichsetzen.
 Sind sie linear unabhängig, behandeln wir die unteren beiden Fälle.
 Auch dort setzen wir die Geraden gleich und prüfen auf **Schnittpunkte**.
-
-So können wir die gegenseitige Lage von Geraden im Raum analysieren!
 
 ## Übungen
 In diesem Blogbeitrag ging es bis jetzt größtenteils um die **Theorie**. Aber: **Übung macht den Meister**! Also auf gehts!
@@ -97,26 +95,29 @@ In diesem Blogbeitrag ging es bis jetzt größtenteils um die **Theorie**. Aber:
     $$h: \overrightarrow{X} = \begin{pmatrix} 0 \\ 5 \end{pmatrix} + \mu\cdot\begin{pmatrix} -2 \\ -1 \end{pmatrix} $$
 </Details>
 <Details summary="Lösung anzeigen">
-    Das ist die Lösung
+    Wir prüfen im Zweidimensionalen lediglich, ob die Geraden parallel zueinander verlaufen.
+    Hierfür verwenden wir die **lineare Abhängigkeit**.
+    Wir prüfen, ob die Richtungsvektoren der Geraden **linear Abhängig** sind.
+
+    $$ \begin{pmatrix} 4 \\ 2 \end{pmatrix} = \lambda\cdot\begin{pmatrix} -2 \\ -1 \end{pmatrix} $$
+
+    Diese Gleichung teilen wir nun in die einzelnen Komponenten auf. Wir erhalten ein Gleichungssystem.
+
+    $$ 4 = \lambda\cdot-2 $$
+    
+    $$ 2 = \lambda\cdot-1 $$
+
+    Da $$ \lambda $$ für beide Gleichungen $$ -2 $$ beträgt, sind unsere **Geraden parallel**!
+
+    <InfoCard>
+        Ob zwei Geraden bzw. Vektoren parallel sind, kann auch über das **Skalar- order Kreuzprodukt** berechnet werden!
+    </InfoCard>
 </Details>
 
-### Aufgabe 2 (Zweidimensionaler Raum)
-
-<Details summary="Aufgabe anzeigen">
-    Untersuche die gegenseitige Lage der Geraden g und h.
-
-    $$g: \overrightarrow{X} = \begin{pmatrix} 2 \\ 7 \end{pmatrix} + \lambda\cdot\begin{pmatrix} 1 \\ 1 \end{pmatrix} $$
-
-    $$h: \overrightarrow{X} = \begin{pmatrix} 0 \\ 5 \end{pmatrix} + \mu\cdot\begin{pmatrix} -1 \\ 1 \end{pmatrix} $$
-</Details>
-<Details summary="Lösung anzeigen">
-    Das ist die Lösung
-</Details>
-
-Ab hier geht es um Aufgaben im dreidimensionalen Raum. Du kannst dir die Lösung der Dritten Aufgabe gerne zur Hand nehmen, 
+Ab hier geht es um Aufgaben im dreidimensionalen Raum. Du kannst dir die Lösung der zweiten Aufgabe gerne zur Hand nehmen, 
 falls du noch nicht genau weist, wie du die Theorie anwenden sollst.
 
-### Aufgabe 3 (Dreidimensionaler Raum)
+### Aufgabe 2 (Dreidimensionaler Raum)
 
 <Details summary="Aufgabe anzeigen">
     Untersuche die gegenseitige Lage der Geraden g und h.
@@ -126,5 +127,30 @@ falls du noch nicht genau weist, wie du die Theorie anwenden sollst.
     $$h: \overrightarrow{X} = \begin{pmatrix} 3 \\ 3 \\ 1 \end{pmatrix} + \mu\cdot\begin{pmatrix} -1 \\ -0.5 \\ 1 \end{pmatrix} $$
 </Details>
 <Details summary="Lösung anzeigen">
-    Das ist die Lösung
+    Wir prüfen zuerst, ob die beiden Geraden parallel zueinander verlaufen. Dafür verwenden wir die **lineare Abhängigkeit**.
+
+    $$ \begin{pmatrix} 2 \\ 1 \\ -2 \end{pmatrix} = \lambda\cdot\begin{pmatrix} -1 \\ -0.5 \\ 1 \end{pmatrix} $$
+
+    Diese Gleichung teilen wir nun in die einzelnen Komponenten auf. Wir erhalten ein **Gleichungssystem**.
+
+    $$ 2 = \lambda\cdot -1 $$
+
+    $$ 1 = \lambda\cdot -0.5 $$
+
+    $$ -2 = \lambda\cdot 1 $$
+
+    Da $$ \lambda $$ für alle Gleichungen $$ -2 $$ beträgt, sind unsere Geraden parallel!
+
+    Jetzt muss noch geprüft werden, ob die gleichungen die selben sind, oder nicht.
+    Da gesichert ist, dass eine Gerade auf dessen Aufpunkt liegt, setzen wir den Aufpunkt der 1. Geraden 
+    in die Gleichung der 2. Geraden ein, um zu prüfen, ob auch die 2. Gerade diesen Punkt schneidet.
+
+    $$ \begin{pmatrix} 1 \\ 2 \\3 \end{pmatrix} = \begin{pmatrix} 3 \\ 3 \\ 1 \end{pmatrix} + \mu\cdot\begin{pmatrix} -1 \\ -0.5 \\ 1 \end{pmatrix} $$
+
+    Auch hier ergibt sich ein **Gleichungssystem mit drei Gleichungen**. Gilt $$ \mu = 2 $$, sind alle Gleichungen erfüllt.
+    Somit haben wir einen Punkt gefunden, durch welchen beide Geraden verlaufen und haben bewiesen, dass dies ein und **die selben Geraden** sein müssen!
+
+    <InfoCard>
+        **Tipp:** Gebe die zwei Geraden in [GeoGebra](https://www.geogebra.org/) ein und prüfe dein Ergebnis!
+    </InfoCard>
 </Details>
