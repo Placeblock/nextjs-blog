@@ -1,6 +1,6 @@
 ---
 title: "Ebenen und deren Darstellungen"
-description: "Wenn du diesen Beitrag gelesen hast, befindest du dich auf einer höheren Ebene! (Und weißt, was Ebenen in der Geometrie sind)"
+description: "Wenn du diesen Beitrag gelesen hast, befindest du dich auf einer höheren Ebene! (Und weist, was Ebenen in der Geometrie sind)"
 banner: "https://cdn.pixabay.com/photo/2017/09/28/13/38/double-decker-2795557_960_720.jpg"
 isPublished: true
 publishedOn: 2024-02-08T19:03:00
@@ -13,12 +13,6 @@ Egal wo du bist, überall um dich herum sind Ebenen.
 Deine Tischplatte ist eine Ebene. Der Boden des Busses ist eine Ebene.
 Auch der Bildschirm des Geräts über welches du diesen 
 Beitrag liest ist eine Ebene.
-
-<InfoCard>
-    Im Zweidimensionalen gibt es nur eine Ebene. Die gesamte
-    "Zeichenfläche" eines Zweidimensionalen Koordinatensystems
-    stellt eine Ebene dar, die xy-Ebene.
-</InfoCard>
 
 In GeoGebra sehen Ebenen wie folgt aus:
 
@@ -62,20 +56,20 @@ Ebenengleichung: $$ \overrightarrow{X} = \overrightarrow{A} + \lambda\cdot\overr
 
 Als letztes, aber definitif nicht am wenigsten wichtig, ist die Normalenform der Ebenengleichung. Um eine Gleichung eindeutig
 zu bestimmen brauchen wir nämlich gar nicht unbedingt zwei Vektoren!
-Ein Vektor welcher senkrecht zur Ebene liegt reicht völlig aus, um diese eindeutig zu bestimmen.
-Betrachte die folgende GeoGebra Simulation und versuche, das Prinzip zu verstehen.
+Ein Vektor, welcher senkrecht auf der Ebene steht, reicht völlig aus, um diese eindeutig zu bestimmen.
+Betrachte die folgende GeoGebra Simulation und versuche das Prinzip zu verstehen.
 
 <GeoGebra id="5" type="3d" src="plane-normal-vector" />
 
 Zu dieser Normalenform kommen wir sehr einfach über das Kreuzprodukt. Haben wir bereits die zwei Richtungsvektoren
 der Ebene gegeben, können wir über das Kreuzprodukt dieser den Normalenvektor ausrechnen, da das Kreuzprodukt einen Vektor zurück
-gibt, der genau senkrecht auf den beiden Vektoren liegt.
+gibt, der genau senkrecht auf den beiden Vektoren steht.
 
 Sind zwei Richtungsvektoren $$ \overrightarrow{u} $$ und $$\overrightarrow{v} $$ gegeben, 
 berechnet sich der Normalenvektor durch $$ \overrightarrow{n} = \overrightarrow{u}\times\overrightarrow{v} $$.
 
 Der Normalenvektor ist äußerst praktisch, falls wir prüfen wollen, ob ein Punkt auf unserer Ebene liegt.
-Das Skalarprodukt zweier Vektoren ist $$0$$, solange sie senkrecht zueinander stehen / der Winkel zwischen den Vektoren
+Das Skalarprodukt zweier Vektoren ist $$0$$, solange sie senkrecht zueinander liegen / der Winkel zwischen den Vektoren
 $$ 90\degree $$ beträgt. Wir prüfen Punkt $$X$$. Zu Beginn berechnen wir den Vektor von Aufpunkt $$A$$ der Ebene zu unserem
 Punkt $$X$$. Ist das Skalarprodukt zwischen diesem Vektor und unserem Normalenvektor $$0$$, sind die beiden Vektoren
 senkrecht zu einander und der Punkt liegt somit auf der Ebene.
