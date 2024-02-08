@@ -49,7 +49,8 @@ export default memo(function GeoGebra({ src, id = "ggb-element", type="graphing"
         showFullScreenButton: true,
         width: 500,
         height: 300,
-        editorBackgroundColor: "#000000"
+        //borderColor: "#000000",
+        appletOnLoad: (_) => {}
     }
     useEffect(() => {
         if (!deployggbLoaded) {
@@ -70,6 +71,9 @@ export default memo(function GeoGebra({ src, id = "ggb-element", type="graphing"
     useEffect(() => {
         // @ts-ignore
         if (deployggbLoaded && window.GGBApplet) {
+            params.appletOnLoad = (api) => {
+                //api.evalCommand('SetBackgroundColor("#030303")')
+            }
             // @ts-ignore
             const applet = new GGBApplet(params, true);
             applet.setHTML5Codebase("/GeoGebra/HTML5/5.0/web3d/")
