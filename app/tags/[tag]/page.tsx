@@ -1,17 +1,16 @@
-import { getBlogPostsMeta, getTags } from "src/posts";
-import { Metadata } from "next";
-import TagList from "@components/taglist/taglist";
 import Postlist from "@components/postlist/postlist";
+import { Metadata } from "next";
+import Link from "next/link";
+import { getBlogPostsMeta } from "src/posts";
 
 export const revalidate = 600
+export const dynamic = "force-static"
 
-export default async function Page() {
-    const posts = await getBlogPostsMeta();
-    const tags = getTags(posts);
+export default async function Page({ params }: { params: { tag: string } }) {
+    var posts = await getBlogPostsMeta();
+    posts = posts.filter(p => p.data.tags.includes(params.tag))
     return <div>
-        <div className="post-list-tags" style={{marginBottom: "30px"}}>
-            <TagList tags={tags}/>
-        </div>
+        <Link className="tag" href={"/"}>Alle</Link>
         <Postlist posts={posts}/>
     </div>
 }

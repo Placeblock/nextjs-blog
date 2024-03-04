@@ -1,0 +1,32 @@
+@use "@ui/variables";
+
+.post-card-title {
+    margin-top: 0px;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.post-card-description {
+    color: variables.$light;
+}
+
+.post-card {
+    transition: scale 0.1s ease-in-out;
+}
+
+.post-card:hover {
+    scale: 1.02;
+}
+
+.post-card-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.post-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}

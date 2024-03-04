@@ -61,3 +61,23 @@ export async function getBlogPostsMeta(): Promise<Post[]> {
         }
     })
 }
+
+export function getTags(metas: Post[]): string[] {
+    var tagsmap: {[tag: string]: number} = {}
+    for (let meta of metas) {
+        if (!meta.data.isPublished) continue;
+        for (let tag of meta.data.tags) {
+            if (tag in tagsmap) {
+                tagsmap[tag]++;
+            } else {
+                tagsmap[tag] = 1;
+            }
+        }
+    }
+    var tagsamount: {tag: string, amount: number}[] = []
+    for (const [tag, amount] of Object.entries(tagsmap)) {
+        tagsamount.push({tag, amount})
+    }
+    tagsamount.sort((t1, t2) => t2.amount-t1.amount)
+    return tagsamount.map(t => t.tag)
+}
