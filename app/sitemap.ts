@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
-import { getBlogPostsMeta } from 'src/posts';
+import { getBlogPostsMeta, getTags } from 'src/posts';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const posts = await getBlogPostsMeta();
+    const tags = getTags(posts);
     return [
         {
             url: "https://blog.codelix.de",
@@ -11,7 +12,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         ...posts.map(p => ({
             url: "https://blog.codelix.de/"+p.slug,
-            lastModified: (p.data.publishedOn),
+            lastModified: p.data.publishedOn,
+            changeFrequency: ("monthly" as "monthly")
+        })),
+        ...tags.map(tag => ({
+            url: "https://blog.codelix.de/tags/"+tag,
+            lastModified: new Date(),
             changeFrequency: ("monthly" as "monthly")
         }))
     ]
