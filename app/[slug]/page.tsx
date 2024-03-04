@@ -40,11 +40,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title: post.data["title"],
         metadataBase: new URL("https://blog.codelix.de"),
-        applicationName: "CodelixBlog",
+        applicationName: "Codelix - Blog",
         authors: [{name: "Felix", url: "https://codelix.de"}],
         creator: "Felix",
         description: post.data["description"],
         openGraph: {
+            siteName: "Codelix - Blog",
             title: post.data["title"],
             authors: ["Felix"],
             description: post.data["description"],

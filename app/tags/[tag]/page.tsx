@@ -19,12 +19,13 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
         title: "Codelix - Blog",
         metadataBase: new URL("https://blog.codelix.de"),
-        applicationName: "CodelixBlog",
+        applicationName: "Codelix - Blog",
         authors: [{name: "Felix", url: "https://codelix.de"}],
         creator: "Felix",
         description: "Hey hey, it is me, Felix! This is my blog where I share interesting things with you. Come take a look!",
         openGraph: {
             title: "Codelix - Blog",
+            siteName: "Codelix - Blog",
             description: "Hey hey, it is me, Felix! This is my blog where I share interesting things with you. Come take a look!",
             type: "website",
             images: [{
