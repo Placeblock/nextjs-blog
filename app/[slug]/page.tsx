@@ -22,9 +22,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <h1 className="gradient" id="post-title" dangerouslySetInnerHTML={{__html: post.data.title}}></h1>
         <p id="post-publish-date">Published on {post.data.publishedOn.toLocaleString()}</p>
         <TagList tags={post.data.tags}/>
-        <hr style={{marginBlock: "50px"}}></hr>
+        <hr style={{marginBlock: "40px"}}></hr>
         <Post code={post.code}/>
-        <hr style={{marginBlock: "50px"}}></hr>
+        <hr style={{marginBlock: "40px"}}></hr>
         <p style={{textAlign: "center"}}>Written and developed with ♥ by Felix</p>
     </div>
 }

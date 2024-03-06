@@ -7,6 +7,8 @@ publishedOn: 2024-02-08T19:03:00
 tags: [math, geometry]
 ---
 
+## Einführung zu den Ebenen
+
 Stelle dir einmal deinen Raum um dich herum vor.
 Warscheinlich sitzt du gerade vor irgendeinem Tisch.
 Vielleicht sitzt du gerade im Bus.
@@ -26,6 +28,8 @@ nächsten Simulation gezeigt.
 
 <GeoGebra id="2" type="3d" src="plane-undefined" />
 
+### Angabe einer Ebene durch drei Punkte
+
 Durch drei Punkte können wir eine Ebene allerdings wieder eindeutig bestimmen.
 Eine Einschränkung gilt: Die drei punkte müssen unterschiedlich sein!
 
@@ -37,9 +41,12 @@ Eine Einschränkung gilt: Die drei punkte müssen unterschiedlich sein!
 </ErrorCard>
 
 Somit haben wir bereits eine von mehreren Darstellungen der Ebene erkundet.
+
+### Darstellung durch zwei Richtungsvektoren - Die Parameterform
+
 Ähnlich wie bei den Geraden, welche wir mit einem Aufpunkt und einem Richtungsvektor
 definiert haben, können wir auch die Ebene mit einem Aufpunkt, dafür allerdings
-zwei Richtungsvektoren definieren.
+zwei Richtungsvektoren definieren. Diese Darstellung wird Parameterform genannt.
 
 <GeoGebra id="4" type="3d" src="plane-2-vectors" />
 
@@ -54,6 +61,8 @@ Zusätzlich zu unserem ersten Richtungsvektor $$ \overrightarrow{u} $$ kommt jet
 $$ \overrightarrow{v} $$. Somit gewinnen wir einen weiteren Grad an Freiheit und können unsere Ebene ausdrücken.
 
 Ebenengleichung: $$ \overrightarrow{X} = \overrightarrow{A} + \lambda\cdot\overrightarrow{u} + \mu\cdot\overrightarrow{v} $$
+
+### Darstellung durch den Normalenvektor - Die Normalenform
 
 Als letztes, aber definitif nicht am wenigsten wichtig, ist die Normalenform der Ebenengleichung. Um eine Gleichung eindeutig
 zu bestimmen brauchen wir nämlich gar nicht unbedingt zwei Vektoren!
@@ -83,7 +92,129 @@ Diese Simulation veranschaulicht das Skalarprodukt für einen beliebigen Punkt X
 
 <GeoGebra id="6" type="3d" src="plane-normal-equation" />
 
-Wir haben nun die drei Darstellungen der Ebene besprochen. 
+### Die Koordinatenform
+
+Die Normalenform können wir nun in die letzte, die Koordinatenform umwandeln. Dazu schreiben wir das Skalarprodukt aus.
+
+$$
+n_1 \cdot (x_1 - a_1) + n_2 \cdot (x_2 - a_2) + n_3 \cdot (x_3 - a_3) = 0
+$$
+
+Das können wir jetzt ausmultiplizieren.
+
+$$
+n_1 \cdot x_1 - n_1 \cdot a_1 + n_2 \cdot x_2 - n_2 \cdot a_2 + n_3 \cdot x_3 - n_3 \cdot a_3 = 0
+$$
+
+Umgeschrieben ergibt sich folgende Gleichung:
+
+$$
+n_1 \cdot x_1 + n_2 \cdot x_2 + n_3 \cdot x_3 - (n_1 \cdot a_1 + n_2 \cdot a_2 + n_3 \cdot a_3) = 0
+$$
+
+Wir fassen nun die Klammer inklusive $$-$$ zusammen und nennen sie $$c$$.
+
+$$
+n_1 \cdot x_1 + n_2 \cdot x_2 + n_3 \cdot x_3 + c = 0
+$$
+
+Das ist die Koordinatenform.
+<InfoCard>
+    Die Faktoren der Koordinatenform sind die einzelnen Komponenten des Normalenvektors!
+    Das ist schön ;), denn wir können somit den Normalenvektor direkt ablesen.
+</InfoCard>
+
+## Umwandlungen von Form zu Form
+
+In verschiedenen Situationen sind unterschiedliche Darstellungsformen der Ebene sinnvoll.
+Deshalb müssen wir sie gegebenenfalls umwandeln.
+
+### Von drei Punkten zur Parameterform
+
+Von drei Punkten $$A$$, $$B$$ und $$C$$ kommen wir recht einfach zur Parameterform. Als Aufpunkt suchen wir uns einen
+der drei gegebenen Punkte (z.B. $$A$$) aus. Die Richtungsvektoren bestimmen wir dann einfach durch $$B-A$$ und $$C-A$$.
+
+<Details summary="Beispiel">
+    $$A = (1 \vert 2 \vert 3) \; B = (2 \vert 1 \vert 3) \; C = (3 \vert 2 \vert 1$$
+
+    $$\overrightarrow{X} = A + \lambda \cdot \overrightarrow{AB} + \mu \cdot \overrightarrow{AC}$$
+
+    $$\overrightarrow{X} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} + \lambda \cdot \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix} + \mu \cdot \begin{pmatrix} 2 \\ 0 \\ -2 \end{pmatrix}$$
+</Details>
+
+### Von der Parameterform zur Normalenform
+
+Wir wissen, dass die beiden Richtungsvektoren der Parameterform parallel zur Ebene liegen.
+Aus diesen müssen wir jetzt unseren Normalenvektor berechnen. Zu diesem kommen wir wie beschrieben mit dem
+Kreuzprodukt.
+
+<Details summary="Beispiel">
+    $$\overrightarrow{X} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} + \lambda \cdot \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix} + \mu \cdot \begin{pmatrix} 2 \\ 0 \\ -2 \end{pmatrix}$$
+
+    $$\overrightarrow{n} = \overrightarrow{u}\times\overrightarrow{v} = \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix} \times \begin{pmatrix} 2 \\ 0 \\ -2 \end{pmatrix} = \begin{pmatrix} 2 \\ 2 \\ 2 \end{pmatrix}$$
+
+    $$0 = \overrightarrow{n} \circ (\overrightarrow{X} - \overrightarrow{A} ) = \begin{pmatrix} 2 \\ 2 \\ 2 \end{pmatrix} \circ \left[ \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} - \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \right]$$
+</Details>
+
+### Von der Normalenform zur Koordinatenform
+
+Bei der Herleitung der Koordinatenform wurde bereits die Umformung durch einfache Äquivalenzumformungen gezeigt.
+In der Praxis dauert das allerdings häufig zu lange und es gibt auch einfachere Wege.
+Zur Umrechnung setzen wir unseren bereits in der Normalenform existierenden Normalenvektor in die allgemeine Formel
+der Koordinatenform ein. Um die Konstante c zu berechnen, setzen wir einen Punkt, welcher auf der Gerade ist (vorzugsweise den Aufpunkt)
+ein und formen nach c um.
+
+<Details summary="Beispiel">
+    $$0 = \begin{pmatrix} 2 \\ 2 \\ 2 \end{pmatrix} \circ \left[ \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} - \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \right]$$
+
+    Einsetzen in die allgemeine Gleichung
+
+    $$2 \cdot x_1 + 2 \cdot x_2 + 2 \cdot x_3 + c = 0$$
+
+    Wir setzen den Aufpunkt (ein Punkt auf der Ebene) ein
+
+    $$2 \cdot 1 + 2 \cdot 2 + 2 \cdot 3 + c = 0$$
+
+    Somit ergibt sich
+
+    $$2 \cdot x_1 + 2 \cdot x_2 + 2 \cdot x_3 - 12 = 0$$
+</Details>
+
+### Von der Normalenform zur Parameterform
+
+Um von der Normalenform zur Parameterform zu gelangen müssen wir die zwei Richtungsvektoren berechnen. Durch einen Trick gelingt das sehr einfach.
+Wir können einen Vektor $$\overrightarrow{v}$$, der senkrecht auf einem anderen Vektor $$\overrightarrow{u}$$ steht erzeugen, in dem wir zwei
+Komponenten des Vektors $$\overrightarrow{u}$$ vertauschen, einen davon negieren, und den letzten auf 0 setzen.
+
+$$\overrightarrow{v} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \to \overrightarrow{u} = \begin{pmatrix} -2 \\ 1 \\ 0 \end{pmatrix}$$
+
+$$\overrightarrow{v} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \to \overrightarrow{u} = \begin{pmatrix} 0 \\ -3 \\ 2 \end{pmatrix}$$
+
+Somit können wir von unserem Normalenvektor auf die zwei Richtungsvektoren schließen und unsere Parameterform aufstellen.
+
+<Details summary="Beispiel">
+    $$0 = \begin{pmatrix} 2 \\ 2 \\ 2 \end{pmatrix} \circ \left[ \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} - \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \right]$$
+
+    Berechnen der zwei Richtungsvektoren
+
+    $$\overrightarrow{v} = \begin{pmatrix} -2 \\ 2 \\ 0 \end{pmatrix}$$
+
+    $$\overrightarrow{u} = \begin{pmatrix} 0 \\ -2 \\ 2 \end{pmatrix}$$
+
+    Aufstellen der Parameterform
+
+    $$\overrightarrow{X} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} + \lambda \cdot \begin{pmatrix} -2 \\ 2 \\ 0 \end{pmatrix} + \mu \cdot \begin{pmatrix} 0 \\ -2 \\ 2 \end{pmatrix}$$
+</Details>
+
+## Abschließende Worte
+
+Wir haben nun drei Darstellungsformen der Ebene besprochen.
+
+<InfoCard>
+    In einigen Quellen wird unterteilt zwischen Parameterform und Normalenform, wobei letzteres erneut unterteilt ist in die Vektor- und Koordinatendarstellung.
+    Häufig findet man allerdings auch einfach die Unterteilung in drei unterschiedliche Formen!
+</InfoCard>
+
 Wie immer: Übung macht den Meister! Also macht immer schön eure Hausaufgaben :)
 
 

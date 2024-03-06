@@ -6,6 +6,9 @@ import rehypePrism from '@mapbox/rehype-prism'
 import remarkMath from "remark-math"
 import rehypeKatex from 'rehype-katex'
 import imageMetadata from "./imageMetadata"
+import rehypeSlug from "rehype-slug"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import toc from "@jsdevtools/rehype-toc"
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -22,7 +25,22 @@ export async function getBlogPostData(slug: string): Promise<{code: string, data
     const {code, frontmatter} = await bundleMDX({source: source, mdxOptions: (options, fm) => {
         // Add remark Plugins and rehype Plugins
         options.remarkPlugins = [...(options.remarkPlugins ?? []), ...[remarkMath]]
-        options.rehypePlugins = [...(options.rehypePlugins ?? []), ...[imageMetadata, rehypePrism, rehypeKatex]]
+        options.rehypePlugins = [...(options.rehypePlugins ?? []), ...[rehypeKatex, rehypeSlug, rehypeAutolinkHeadings, imageMetadata, rehypePrism, [toc, {
+            customizeTOC: toc => {
+                toc.children.unshift({
+                    type: "element",
+                    tagName: "h2",
+                    children: [{type: 'text', value: 'Table of Contents'}]
+                })
+                toc.children.push({
+                    type: "element",
+                    tagName: "hr",
+                    properties: {
+                        style: "margin-block:40px;"
+                    }
+                })
+            }
+        }]]]
         return options;
     }})
 

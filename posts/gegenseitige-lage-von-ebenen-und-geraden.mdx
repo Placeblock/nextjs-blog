@@ -2,7 +2,7 @@
 title: "Gegenseitige Lage von Ebenen und Geraden"
 description: "Geraden und Ebenen besitzen drei verschiedene Lagebeziehungen. Diese werden in diesem Beitrag erklährt."
 banner: "https://cdn.pixabay.com/photo/2017/09/28/13/38/double-decker-2795557_960_720.jpg"
-isPublished: false
+isPublished: true
 publishedOn: 2024-02-08T19:03:00
 tags: [math, geometry]
 ---
@@ -38,8 +38,91 @@ Der Schnittpunkt muss sowohl auf der Ebene, als auch auf der Gerade liegen.
 
 Beispiel:
 
-$$\overrightarrow{X} = \begin{pmatrix} 1\\0\\3 \end{pmatrix} + \lambda \cdot \begin{pmatrix} 2\\1\\2 \end{pmatrix}$$
+$$
+g: \overrightarrow{X} = \begin{pmatrix} 1\\0\\3 \end{pmatrix} + t \cdot \begin{pmatrix} 2\\1\\2 \end{pmatrix}
+$$
 
-$$E: \begin{pmatrix} 1\\2\\2 \end{pmatrix} \circ [\overrightarrow{X}-\begin{pmatrix} 3\\-1\\-1 \end{pmatrix}] = 0$$
+$$
+E: \begin{pmatrix} 3\\-1\\-1 \end{pmatrix} + r \cdot \begin{pmatrix} -2\\1\\0 \end{pmatrix} + s \cdot \begin{pmatrix} -2\\0\\1 \end{pmatrix}
+$$
 
+Eine Möglichkeit (eventuell allerdings nicht die schnellste) ist das Gleichsetzen und Lösen.
 
+<Details summary="Gesamte Rechnung anzeigen">
+	Die 2 Gleichungen gleichsetzen
+	$$
+	\begin{pmatrix} \textcolor{aqua}{1}\\\textcolor{blueviolet}{0}\\\textcolor{springgreen}{3} \end{pmatrix} 
+	+ t \cdot \begin{pmatrix} \textcolor{aqua}{2}\\\textcolor{blueviolet}{1}\\\textcolor{springgreen}{2} \end{pmatrix} = 
+	\begin{pmatrix} \textcolor{aqua}{3}\\\textcolor{blueviolet}{-1}\\\textcolor{springgreen}{-1} \end{pmatrix} 
+	+ r \cdot \begin{pmatrix} \textcolor{aqua}{-2}\\\textcolor{blueviolet}{1}\\\textcolor{springgreen}{0} \end{pmatrix} 
+	+ s \cdot \begin{pmatrix} \textcolor{aqua}{-2}\\\textcolor{blueviolet}{0}\\\textcolor{springgreen}{1} \end{pmatrix}
+	$$
+
+	Aufstellen des Gleichungssystems
+
+	$$
+	\begin{aligned}
+	\color{aqua} I. && 1 + 2t &= 3 - 2r - 2s \\
+	\color{blueviolet} II. && t &= -1 + r \\
+	\color{springgreen} III. && 3 + 2t &= -1 + s
+	\end{aligned} 
+	$$
+
+	$$II$$ in $$I$$ einsetzen:
+
+	$$
+	\begin{aligned}
+	1 + 2(-1+r) &= 3 - 2r - 2s && \lvert \; ausmultiplizieren\\
+	1 - 2 + 2r &= 3 - 2r - 2s && \lvert \; +2r\\
+	-1 + 4r &= 3 - 2s && \lvert \; +2s -4r +1\\
+	2s &= -4r + 4 && \lvert \; \div 2\\
+	s &= -2r + 2 = I'
+	\end{aligned} 
+	$$
+
+	$$II$$ und $$I'$$ in $$III$$ einsetzen:
+
+	$$
+	\begin{aligned}
+	3 + 2 (-1 + r) &= -1 - 2r + 2 && \lvert \; ausmultiplizieren\\
+	3 - 2 + 2r &= -1 -2r + 2 && \lvert \; +2r -1\\
+	4r &= 0 && \lvert \; \div 4\\
+	r &= 0
+	\end{aligned} 
+	$$
+	
+	$$III'$$ in $$I'$$ einsetzen:
+	
+	$$
+	\begin{aligned}
+	s &= 2
+	\end{aligned} 
+	$$
+
+	(Optional) $$r$$ in $$II$$ einsetzen:
+
+	$$
+	\begin{aligned}
+	t &= -1
+	\end{aligned} 
+	$$
+
+	Somit haben wir sowohl die beiden unbekannten Faktoren der Ebene, als auch die der Geraden berechnet.
+	Setzen wir diese ein, erhalten wir den Schnittpunkt:
+
+	$$
+	\overrightarrow{X} = \begin{pmatrix} 1\\0\\3 \end{pmatrix} -1 \cdot \begin{pmatrix} 2\\1\\2 \end{pmatrix} = \begin{pmatrix} -1\\-1\\1 \end{pmatrix}
+	$$
+	$$
+	\overrightarrow{X} = \begin{pmatrix} 3\\-1\\-1 \end{pmatrix} + 0 \cdot \begin{pmatrix} -2\\1\\0 \end{pmatrix} + 2 \cdot \begin{pmatrix} -2\\0\\1 \end{pmatrix}
+	= \begin{pmatrix} -1\\-1\\1 \end{pmatrix}
+	$$
+
+	$$\begin{pmatrix} -1\\-1\\1 \end{pmatrix}$$ ist unser Schnittpunkt!
+</Details>
+
+Das funktioniert, dauert allerdings seeeehr lange. Mit anderen Darstellungen der Ebenengleichung können wir das Ganze etwas beschleunigen.
+
+$$
+	
+$$

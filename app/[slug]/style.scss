@@ -22,6 +22,7 @@
 
     h1, h2, h3, h4 {
         margin-block: 20px;
+        position: relative;
     }
 
     strong {
@@ -41,6 +42,21 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .katex-display { overflow: auto hidden }
+
+    .icon-link {
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url("/images/link.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        display: block;
     }
 }
 
