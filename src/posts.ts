@@ -27,6 +27,7 @@ export async function getBlogPostData(slug: string): Promise<{code: string, data
         options.remarkPlugins = [...(options.remarkPlugins ?? []), ...[remarkMath]]
         options.rehypePlugins = [...(options.rehypePlugins ?? []), ...[rehypeKatex, rehypeSlug, rehypeAutolinkHeadings, imageMetadata, rehypePrism, [toc, {
             customizeTOC: toc => {
+                if (toc.children[0].children.length === 0) return false;
                 toc.children.unshift({
                     type: "element",
                     tagName: "h2",
