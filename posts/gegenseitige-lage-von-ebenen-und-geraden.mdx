@@ -3,7 +3,7 @@ title: "Gegenseitige Lage von Ebenen und Geraden"
 description: "Geraden und Ebenen besitzen drei verschiedene Lagebeziehungen. Diese werden in diesem Beitrag erklährt."
 banner: "https://cdn.pixabay.com/photo/2017/09/28/13/38/double-decker-2795557_960_720.jpg"
 isPublished: true
-publishedOn: 2024-02-08T19:03:00
+publishedOn: 2024-03-06T22:50:00
 tags: [math, geometry]
 ---
 
@@ -17,7 +17,12 @@ hier ein einfaches Schema, die Beziehungen zu prüfen.
 
 Es gibt drei unterschiedliche Lagebeziehungen einer Geraden zu einer Ebene.
 
-## 1. Die Ebene und die Gerade schneiden sich in einem Punkt
+<ErrorCard>
+	Lerne diese unterschiedlichen Lagebeziehungen nie auswendig, ohne sie zu verstehen.
+	Wenn du sie verstanden hast kannst du sie automatisch auswendig!
+</ErrorCard>
+
+## Ebene und Gerade schneiden sich in einem Punkt
 
 Das muss man sich ein wenig vorstellen, wie eine Nadel, die man gerade durch
 ein Stück stoff zieht. Dabei ist das Stück stoff die Ebene und die Nade die Gerade
@@ -123,6 +128,53 @@ Eine Möglichkeit (eventuell allerdings nicht die schnellste) ist das Gleichsetz
 
 Das funktioniert, dauert allerdings seeeehr lange. Mit anderen Darstellungen der Ebenengleichung können wir das Ganze etwas beschleunigen.
 
+Als Zutaten benötigen wir eine Geradengleichung und eine Ebenengleichung in Koordinatendarstellung.
+
+
 $$
-	
+g: \overrightarrow{X} = \begin{pmatrix} 1\\0\\3 \end{pmatrix} + t \cdot \begin{pmatrix} 2\\1\\2 \end{pmatrix}
 $$
+
+$$
+E: 1 \cdot x_1 + 2 \cdot x_2 + 2 \cdot x_3 + 1 = 0
+$$
+
+Man nehme die einzelnen Komponenten der Geradengleichung und setze sie in die Ebenengleichung ein.
+
+$$
+	1 \cdot (1 + 2t) + 2 \cdot t + 2 \cdot (3 + 2t) + 1 = 0
+$$
+
+Wir stellen uns damit die Frage: Welchen Wert muss t im Schnittpunkt haben?
+
+$$
+\begin{aligned}
+1 \cdot (1 + 2t) + 2 \cdot t + 2 \cdot (3 + 2t) + 1 &= 0 && \lvert \; ausmultiplizieren \\
+1 + 2t + 2t + 6 + 4t + 1 &= 0 \\
+8 + 8t &= 0 && \lvert \; -8t \; \div8 \\
+t &= -1
+\end{aligned} 
+$$
+
+Setzen wir nun t in unsere Geradengleichung ein, erhalten wir den Schnittpunkt:
+
+$$
+\overrightarrow{X} = \begin{pmatrix} 1\\0\\3 \end{pmatrix} -1 \cdot \begin{pmatrix} 2\\1\\2 \end{pmatrix} = \begin{pmatrix} -1\\-1\\1 \end{pmatrix}
+$$
+
+
+## Ebene und Gerade sind parallel
+
+In diesem Fall haben die Gerade und die Ebene keine gemeinsamen Punkte!
+
+Dieser Fall liegt vor, wenn das Skalarprodukt aus Normalenvektor der Ebene und Richtungsvektor der Gerade $$0$$ beträgt!
+<InfoCard>
+	Versuche dir zu überlegen und dir vorzustellen, warum das so ist!
+</InfoCard>
+
+## Ebene und Gerade liegen ineinander
+
+In diesem Fall haben die Gerade und die Ebene unendlich viele gemeinsame Punkte!
+
+Hast du geprüft, ob die beiden geometrischen Objekte parallel zueinander liegen, kannst du prüfen, ob der Aufpunkt der Geraden in
+der Ebene liegt. Ist das der fall, liegt die Gerade genau in der Ebene!
