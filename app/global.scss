@@ -54,3 +54,18 @@ hr {
 h1 {
     font-size: 32px;
 }
+
+#rss-link {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 20px;
+    height: 20px;
+    color: variables.$light;
+}
+
+@media only screen and (max-width: 800px) {
+    #rss-link {
+        display: none;
+    }
+} 
