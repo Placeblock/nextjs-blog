@@ -1,93 +1,45 @@
 ---
 title: "Gegenseitige Lage von Ebenen und Geraden"
-description: "Wenn du diesen Beitrag gelesen hast, befindest du dich auf einer höheren Ebene! (Und weist, was Ebenen in der Geometrie sind)"
+description: "Geraden und Ebenen besitzen drei verschiedene Lagebeziehungen. Diese werden in diesem Beitrag erklährt."
 banner: "https://cdn.pixabay.com/photo/2017/09/28/13/38/double-decker-2795557_960_720.jpg"
 isPublished: false
 publishedOn: 2024-02-08T19:03:00
-tags: []
+tags: [math, geometry]
 ---
 
-Stelle dir einmal deinen Raum um dich herum vor.
-Warscheinlich sitzt du gerade vor irgendeinem Tisch.
-Vielleicht sitzt du gerade im Bus.
-Egal wo du bist, überall um dich herum sind Ebenen.
-Deine Tischplatte ist eine Ebene. Der Boden des Busses ist eine Ebene.
-Auch der Bildschirm des Geräts über welches du diesen 
-Beitrag liest ist eine Ebene.
-
-In GeoGebra sehen Ebenen wie folgt aus:
-
-<GeoGebra id="1" type="3d" src="plane" />
-Bewege die Simulation um einen Eindruck der Tiefe zu bekommen.
-
-Unsere bisher behandelten Geraden wurden durch zwei Punkte fest bestimmt.
-Nur zwei Punkte bestimmen eine Ebene allerdings nicht fest, wie in der 
-nächsten Simulation gezeigt.
-
-<GeoGebra id="2" type="3d" src="plane-undefined" />
-
-Durch drei Punkte können wir eine Ebene allerdings wieder eindeutig bestimmen.
-Eine Einschränkung gilt: Die drei punkte müssen unterschiedlich sein!
-
-<GeoGebra id="3" type="3d" src="plane-3-points" />
-
-<ErrorCard>
-    Wichtig: Ebenen sind keine Flächen. Ebenen gehen in jede Richtung
-    unendlich weiter. Sie enden nie!
-</ErrorCard>
-
-Somit haben wir bereits eine von mehreren Darstellungen der Ebene erkundet.
-Ähnlich wie bei den Geraden, welche wir mit einem Aufpunkt und einem Richtungsvektor
-definiert haben, können wir auch die Ebene mit einem Aufpunkt, dafür allerdings
-zwei Richtungsvektoren definieren.
-
-<GeoGebra id="4" type="3d" src="plane-2-vectors" />
-
-In der Simulation ist die Ebene durch den Punkt $$ A $$ und die 
-beiden Vektoren $$ \overrightarrow{u} $$ und $$\overrightarrow{v} $$ eindeutig bestimmt.  
-Durch eine kleine Anpassung unserer Geradengleichung können wir sehr einfach eine 
-Ebenengleichung formulieren:
-
-Geradengleichung: $$ \overrightarrow{X} = \overrightarrow{A} + \lambda\cdot\overrightarrow{u} $$
-
-Zusätzlich zu unserem ersten Richtungsvektor $$ \overrightarrow{u} $$ kommt jetzt ein weiterer Richtungsvektor
-$$ \overrightarrow{v} $$. Somit gewinnen wir einen weiteren Grad an Freiheit und können unsere Ebene ausdrücken.
-
-Ebenengleichung: $$ \overrightarrow{X} = \overrightarrow{A} + \lambda\cdot\overrightarrow{u} + \mu\cdot\overrightarrow{v} $$
-
-Als letztes, aber definitif nicht am wenigsten wichtig, ist die Normalenform der Ebenengleichung. Um eine Gleichung eindeutig
-zu bestimmen brauchen wir nämlich gar nicht unbedingt zwei Vektoren!
-Ein Vektor, welcher senkrecht auf der Ebene steht, reicht völlig aus, um diese eindeutig zu bestimmen.
-Betrachte die folgende GeoGebra Simulation und versuche das Prinzip zu verstehen.
-
-<GeoGebra id="5" type="3d" src="plane-normal-vector" />
-
-Zu dieser Normalenform kommen wir sehr einfach über das Kreuzprodukt. Haben wir bereits die zwei Richtungsvektoren
-der Ebene gegeben, können wir über das Kreuzprodukt dieser den Normalenvektor ausrechnen, da das Kreuzprodukt einen Vektor zurück
-gibt, der genau senkrecht auf den beiden Vektoren steht.
-
-Sind zwei Richtungsvektoren $$ \overrightarrow{u} $$ und $$\overrightarrow{v} $$ gegeben, 
-berechnet sich der Normalenvektor durch $$ \overrightarrow{n} = \overrightarrow{u}\times\overrightarrow{v} $$.
-
-Der Normalenvektor ist äußerst praktisch, falls wir prüfen wollen, ob ein Punkt auf unserer Ebene liegt.
-Das Skalarprodukt zweier Vektoren ist $$0$$, solange sie senkrecht zueinander liegen / der Winkel zwischen den Vektoren
-$$ 90\degree $$ beträgt. Wir prüfen Punkt $$X$$. Zu Beginn berechnen wir den Vektor von Aufpunkt $$A$$ der Ebene zu unserem
-Punkt $$X$$. Ist das Skalarprodukt zwischen diesem Vektor und unserem Normalenvektor $$0$$, sind die beiden Vektoren
-senkrecht zu einander und der Punkt liegt somit auf der Ebene.
-
-Das ergibt die folgende Gleichung:
-
-$$ 0 = \overrightarrow{n} \circ (\overrightarrow{X} - \overrightarrow{A}) $$
-
-Diese Simulation veranschaulicht das Skalarprodukt für einen beliebigen Punkt X auf einer Ebene mit Normalenvektor
-
-<GeoGebra id="6" type="3d" src="plane-normal-equation" />
-
-Wir haben nun die drei Darstellungen der Ebene besprochen. 
-Wie immer: Übung macht den Meister! Also macht immer schön eure Hausaufgaben :)
-
+Ähnlich wie bei den Lagebeziehungen zwischen zwei Gereaden gibt es auch
+hier ein einfaches Schema, die Beziehungen zu prüfen.
 
 <InfoCard>
-    Hast du mal den Begriff "Ebene" ins englische übersetzt?
-    Und dann schau dir nochmal das Bild dieses Beitrags an! ;)
+	Versuche dir, bevor du weiterließt, im Kopf vorzustellen,
+	auf welche Weißen Geraden zu Ebenen liegen können!
 </InfoCard>
+
+Es gibt drei unterschiedliche Lagebeziehungen einer Geraden zu einer Ebene.
+
+## 1. Die Ebene und die Gerade schneiden sich in einem Punkt
+
+Das muss man sich ein wenig vorstellen, wie eine Nadel, die man gerade durch
+ein Stück stoff zieht. Dabei ist das Stück stoff die Ebene und die Nade die Gerade
+An einem bestimmten Punkt wird die Nadel den Stoff berühren; das ist der Schnittpunkt
+der Gerade und der Ebene.
+
+Vorraussetzung für einen gemeinsamen Punkt ist, dass die Ebene und die Gerade nicht parallel
+zueinander liegen, denn wenn sie das wären, würden sie sich nie schneiden, wie das folgende
+Beispiel veranschaulicht.
+
+Hast du eine Idee, wie wir prüfen könnten, ob sie parallel zueinander liegen?
+Richtig! Skalarprodukt!. Ist das Skalarprodukt von Normalenvektor der Ebene und Richtungsvektor
+der Gerade $$0$$, wissen wir, dass sie senkrecht zueinander stehen und somit
+die Gerade und die Ebene parallel. Deshalb gibt es dann keinen Schnittpunkt.
+Ist es $$!= 0$$ können wir fortfahren mit der Berechnung des Schnittpunktes.
+
+Der Schnittpunkt muss sowohl auf der Ebene, als auch auf der Gerade liegen.
+
+Beispiel:
+
+$$\overrightarrow{X} = \begin{pmatrix} 1\\0\\3 \end{pmatrix} + \lambda \cdot \begin{pmatrix} 2\\1\\2 \end{pmatrix}$$
+
+$$E: \begin{pmatrix} 1\\2\\2 \end{pmatrix} \circ [\overrightarrow{X}-\begin{pmatrix} 3\\-1\\-1 \end{pmatrix}] = 0$$
+
+
