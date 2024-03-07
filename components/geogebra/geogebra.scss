@@ -1,6 +1,27 @@
+@use "@ui/variables";
+
 .geogebra {
+    position: relative !important;
     display: block;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
+}
+
+.geogebra-external {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background-color: variables.$primary-cyan;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.geogebra-external svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
