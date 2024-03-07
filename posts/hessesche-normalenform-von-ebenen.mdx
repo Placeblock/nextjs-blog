@@ -1,16 +1,20 @@
 ---
 title: "Die Hessesche Normalenform"
 description: "Hinter der (Hesseschen) Normalenform steckt vielleicht so einiges mehr wie man zunächst annehmen mag. Diese wollen wir in diesem Beitrag im Detail untersuchen"
-banner: "https://cdn.pixabay.com/photo/2015/07/26/16/35/business-861325_960_720.jpg"
+banner: "https://cdn.pixabay.com/photo/2017/01/30/16/10/sunset-2021262_960_720.jpg"
 isPublished: true
-publishedOn: 2024-02-01T14:59:00
-tags: [math, geometry]
+publishedOn: 2024-03-07T14:30:00
+tags: [math, geometry, planes]
 ---
 
 <InfoCard>
 	In diesem Beitrag werden wir die Hessesche Normalenform genauer untersuchen.
 	Ihr solltet dafür ein fundiertes Verständnis von Ebenengleichungen haben.
 	Lest euch dazu gerne die anderen Beiträge zum Thema Mathe & Geometrie durch!
+
+	In diesem Beitrag ist es enorm wichtig, mit den Simulationen
+	zu experimentieren und zu verstehen, was vor sich geht!
+	Bitte nimm dir die Zeit und benutze die Simulationen!
 </InfoCard>
 
 ## Die Hessesche Normalenform
@@ -20,8 +24,8 @@ besondere Form der Normalenform. Wie wir wissen, gibt der Normalenvektor
 die "Richtung" der Ebene an, da definiert ist, dass der Normalenvektor
 immer senkrecht auf der Ebene steht. Die Länge dieses Vektors
 war bisher völlig irrelevant. Otto Hesse hat der Normalenform noch eine Besonderheit
-verpasst. Die Länge des Normalenvektors muss $$1$$ sein. Mehr macht die Hessesche Normalenform
-nicht. Nun mag sich der ein oder andere vielleicht fragen, was das für einen Sinn hat.
+verpasst. Die Länge des Normalenvektors muss $$1$$ sein. Nun mag sich der ein oder andere vielleicht fragen, 
+was das für einen Sinn hat.
 Es wird sich allerdings herrausstellen, dass dies einen enormen Nutzen in der Abstandsbestimmung hat.
 
 Um also die Hessesche Normalenform zu bilden, müssen wir die Länge des Normalenvektors auf $$1$$ bringen.
@@ -33,9 +37,9 @@ wodurch wir ihn skalieren und einen Einheitsvektor der Länge $$1$$ erhalten.
 Der Einheitsvektor zeigt dabei immernoch in die gleiche Richtung!
 
 Allgemein bedeutete das: $$\hat{n} = \frac{\overrightarrow{n}}{\vert \overrightarrow{n} \vert}$$
-Das sogenannte Zirkumflex $$\hat{}$$ beschreibt einen Einheitsvektor.
+Das sogenannte Zirkumflex $$\; \hat{} \;$$ beschreibt einen Einheitsvektor.
 
-Wir skalieren also einen Vektor, in dem wir alle seine Komponenten mit einem Wert multiplizieren / durch einen Wert teilen.
+Wir skalieren also einen Vektor, indem wir alle seine Komponenten mit einem Wert multiplizieren / durch einen Wert teilen.
 Um von der Normalenform zur Hesseschen Normalenform zu gelangen,
 teilen wir sie einfach durch die Länge des Normalenvektors.
 
@@ -45,8 +49,15 @@ $$
 
 Das funktioniert, da in der Normalenform jedes Polynom / jeder Summand
 eine Komponente des Normalenvektors als Faktor enthält.
-Somit bewirkt die Division durch den Normalenvektor hier auch einfach
+Somit bewirkt die Division durch die Länge des Normalenvektors hier auch einfach
 eine Skalierung.
+
+Die Hessesche Normalenform hat noch eine weitere Bedingung.
+Der Normalenvektor muss vom Koordinatenursprung wegzeigen. Oder anders
+formuliert: Er muss sich auf der gegenüberliegenden Seite des Ursprungs
+"befinden". Mathmatisch ausgedrückt muss $$\overrightarrow{n} \circ \overrightarrow{A} >= 0$$ sein.
+Das spielt bei der im Folgenden erklährten Abstandsbestimmung im Prinzip keine Rolle,
+aber um zu definieren, auf welcher Seite der Ebene sich ein Punkt befindet, ist es relevant.
 
 ## Annäherung an die Hessesche Normalenform über das Skalarprodukt
 
@@ -59,6 +70,9 @@ leichter zu erklähren ist. Alle Erklährungen lassen sich genauso auf
 drei Dimensionen anwenden.
 
 Folgende Simulation zeigt zwei Vektoren und das Skalarprodukt zwischen diesen.
+
+<GeoGebra src="dot-product-x-axis" id="1" type="geometry"/>
+
 $$\overrightarrow{n}$$ zeigt in positive X-Richtung.
 Durch Bewegung des zweiten Vektors stellen wir fest, dass solange dieser
 senkrecht nach oben oder unten liegt, das Skalarprodukt $$0$$ beträgt.
@@ -67,26 +81,29 @@ Verschiebt man den Vektor allerdings ins positive, ist das Skalarprodukt
 positiv, genau andersherum ist es im negativen. Tatsächlich gibt das Skalarprodukt
 hier den Abstand unseres zweiten Vektors von der y-Achse an.
 
-<InfoCard>
-	In diesem Beitrag ist es enorm wichtig, mit den Simulationen
-	zu experimentieren und zu verstehen, was vor sich geht!
-	Bitte nimm dir die Zeit und benutze die Simulationen!
-</InfoCard>
-
 Zeigt der Vektor $$\overrightarrow{n}$$ in positive y-Achse, gibt das Skalarprodukt
 den Abstand des zweiten Vektors von der x-Achse an.
 
-Das Skalarprodukt scheint also immer den Abstand zu der Gerade anzugeben,
-dessene Normalenvektor $$\overrightarrow{n}$$ ist und durch den Ursprung verläuft
+<GeoGebra src="dot-product-y-axis" id="2" type="geometry"/>
 
+Das Skalarprodukt scheint also immer den Abstand zu der Gerade anzugeben,
+dessene Normalenvektor $$\overrightarrow{n}$$ ist und durch den Ursprung verläuft.
 Beträgt die Länge des Vektors  $$\overrightarrow{n}$$ allerdings 
 nicht $$1$$, scheint unsere Abstandsbestimmung nicht mehr zu
 funktionieren.
+
+<GeoGebra src="dot-product" id="3" type="geometry"/>
 
 Ist die Länge von $$\overrightarrow{n}$$ 2, scheint unser Abstand
 doppelt so groß zu sein. Es stellt sich herraus, dass man das Skalarprodukt noch
 durch die Länge von $$\overrightarrow{n}$$ teilen muss, damit
 man den echten Abstand erhält.
+
+$$
+d(P, g) = \frac{\overrightarrow{n} \circ \overrightarrow{P}}{\vert \overrightarrow{n} \vert}
+$$
+
+<GeoGebra src="dot-product-distance" id="4" type="geometry"/>
 
 Das Skalarprodukt liefert uns also neben dem Winkel auch den Abstand
 eines Vektors / Punktes zu jeder beliebigen Gerade, welche durch den
@@ -95,53 +112,32 @@ Normalenvektor $$\overrightarrow{n}$$ beschrieben ist.
 Diese Gerade verläuft immer durch den Ursprung. Durch einfache Subtraktion
 können wir allerdings auch den Abstand zu einer Gerade $$g$$ berechnen,
 welche nicht durch den Ursprung verläuft.
-Wir ziehen den Abstand eines Aufpunkts einer beliebigen Gerade $$g$$ im Raum 
-zur Gerade durch den Ursprung $$h$$ vom Abstand eines beliebigen Punktes zur Geraden
-durch den Ursprung $$h$$ ab, um den Abstand des Punktes von der Geraden $$g$$ im Raum zu erhalten.
-
-Diese Berechnungen funktionieren exakt gleich auch im dreidimensionalen Raum.
-Dort handelt es sich aber nicht um Abstandsbestimmungen zu Geraden, welche durch den
-Normalenvektor eindeutig bestimmt sind, sondern zu Ebenen, welche aber ebenfalls durch
-den Normalenvektor eindeutig bestimmt sind.
-
-Das bedeutet:
+Es sei $$g$$ eine Gerade mit Aufpunkt $$A$$, welche an beliebiger Stelle im Raum liegt.
+Es sei $$h$$ eine Gerade, welche durch den Ursprung verläuft, mit gleichem Normalenvektor wie $$g$$.
+Wir ziehen den Abstand des Aufpunkts $$A$$ zu $$h$$ vom Abstand eines beliebigen Punktes $$P$$ zu $$h$$ ab, um den Abstand von $$P$$ zu $$g$$ zu erhalten.
 
 $$
-E: 0 = \overrightarrow{X} \circ \left[ \overrightarrow{X} - \overrightarrow{A} \right]
+d(P, g) = \frac{\overrightarrow{n} \circ \overrightarrow{P}}{\vert \overrightarrow{n} \vert} - \frac{\overrightarrow{n} \circ \overrightarrow{A}}{\vert \overrightarrow{n} \vert}
+= \frac{\overrightarrow{n} \circ \overrightarrow{P} - \overrightarrow{n} \circ \overrightarrow{A}}{\vert \overrightarrow{n} \vert}
+ = \frac{\overrightarrow{n} (\overrightarrow{P} - \overrightarrow{A})}{\vert \overrightarrow{n} \vert}
 $$
 
-Subtraktion der zwei Skalarprodukte gibt den Abstand zurück.
-Folgendes gilt nur, solange der Betrag des Normalenvektors $$1$$
-beträgt!
+<GeoGebra src="plane-point-distance" id="5" type="geometry"/>
 
-$$
-d(P, E) = \overrightarrow{u} \circ \overrightarrow{X} - \overrightarrow{n} \circ \overrightarrow{A}
-$$
+(Genaugenommen müssen noch Betragsstriche drum rum, denn der Abstand ist immer positiv.)
 
-Ausformuliert:
+Kommt uns das bekannt vor? Richtig! Das ist die Hessesche Normalenform der Ebene! Unsere Normalenform ist nichts anderes,
+als zwei voneinander abgezogene Skalarprodukte und somit die Subtraktion der zwei Distanzen! Zwar bezogen wir uns bisher
+nur auf Abstände zu Geraden, mit Ebenen ist es allerdings genau das selbe!
 
-$$
-d(P, E) = n_1 \cdot x_1 + n_2 \cdot x_2 + n_3 \cdot x_3 - n_1 \cdot a_1 + n_2 \cdot a_2 + n_3 \cdot a_3
-$$
-
-Kommt uns das bekannt vor? Richtig, das ist die Normalenform der Ebene!
-Das Skalarprodukt des Normalenvektors und des Aufpunkts wurde in
-der Normalenform innerhalb von $$c$$ zusammengefasst.
-
-$$
-d(P, E) = n_1 \cdot x_1 + n_2 \cdot x_2 + n_3 \cdot x_3 + c
-$$
-
-Die Normalenform war bisher $$= 0$$ gesetzt. das macht auch völlig Sinn,
+Die Normalenform war bisher $$= 0$$ gesetzt, um zu prüfen, ob ein Punkt auf einer Ebene liegt. Das macht auch völlig Sinn,
 denn wenn ein Punkt auf der Ebene ist, beträgt seine Distanz zu dieser $$0$$!
 
-Damit diese Abstandsbestimmung auch für nicht normalisierte
-Normalenvektor (Länge $$!= 1$$) gilt, teilt man die Formel noch durch die Länge
-des Normalenvektors. Das Teilen durch die Länge
+Das Teilen durch die Länge
 des Normalenvektors ist genau das, was Otto Hesse mit seiner
 Hesseschen Normalengleichung gemacht hat. Somit ist die
 Hessesche Normalengleichung die direkte Funktion zur
-Abstandsbestimmung eines Punktes von einer Gerade!
+Abstandsbestimmung eines Punktes von einer Ebene!
 
 ## Annährung an die Hessesche Normalenform über Trigonometrie
 
@@ -169,6 +165,8 @@ den Kosinus über das Skalarprodukt in unsere Formel für die Distanz ein.
 $$
 d = \vert \overrightarrow{n} \circ \overrightarrow{AP} \vert = \vert \overrightarrow{n} \circ (\overrightarrow{P} - \overrightarrow{A}) \vert
 $$
+
+(Es wurden noch Betragsstriche hinzugefügt, damit die Distanz immer positiv ist)
 
 Kommt uns das bekannt vor? Exakt: Das ist die Ebenengleichung in Normalenform!
 Auch hier können wir durch die Länge des Normalenvektors teilen, um den Abstand für

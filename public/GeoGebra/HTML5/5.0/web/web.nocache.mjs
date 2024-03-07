@@ -104,7 +104,22 @@ window.web = function() {
    * code will inject these functions in these placeholders.
    ***************************************************************************/
   // Provides getInstallLocationDoc() function.
-  var frameDoc;
+  // GWT code can be installed anywhere, but an iFrame is the best place if you
+// want both variable isolation and runAsync support. Variable isolation is
+// useful for avoiding conflicts with JavaScript libraries and critical if
+// you want more than one GWT module on your page. The runAsync implementation
+// will need to install additional chunks of code into the same iFrame later.
+//
+// By default, CrossSiteIFrameLinker will use this script to create the iFrame.
+// It may be replaced by overriding CrossSiteIframeLinker.getJsInstallLocation()
+// to return the name of a different resource file. The replacement script may
+// optionally set this variable inside the iframe:
+//
+// $wnd - the location where the bootstrap module is defined. It should also
+//        be the location where the __gwtStatsEvent function is defined.
+//        If not set, the module will set $wnd to window.parent.
+
+var frameDoc;
 
 function getInstallLocationDoc() {
   setupInstallLocation();
@@ -144,6 +159,7 @@ function setupInstallLocation() {
     frameDoc.close();
   }
 }
+
 
   // Installs the script directly, by simply appending a script tag with the
   // src set to the correct location to the install location.
@@ -290,7 +306,7 @@ function setupWaitForBodyLoad(callback) {
       // __PERMUTATIONS_BEGIN__
       // Permutation logic is injected here. this code populates the
       // answers variable.
-      strongName = 'E5C7B213B83F3B95C215FBB302B239D6';// __PERMUTATIONS_END__
+      strongName = '9BFC5CEECFE1D56DDF3335390E2BB5C0';// __PERMUTATIONS_END__
       var idx = strongName.indexOf(':');
       if (idx != -1) {
         softPermutationId = parseInt(strongName.substring(idx + 1), 10);
