@@ -25,6 +25,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <hr style={{marginBlock: "40px"}}></hr>
         <Post code={post.code}/>
         <hr style={{marginBlock: "40px"}}></hr>
+        <p style={{textAlign: "center"}}><a target="_blank" href={`https://github.com/Placeblock/nextjs-blog/blob/main/posts/${slug}.mdx`}>This post on GitHub</a></p>
         <p style={{textAlign: "center"}}>Written and developed with ♥ by Felix</p>
     </div>
 }

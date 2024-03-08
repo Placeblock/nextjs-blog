@@ -1,23 +1,29 @@
 @use "@ui/variables";
 
-.geogebra {
-    position: relative !important;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.geogebra-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
     max-width: 100%;
 }
 
+.geogebra-container:hover .geogebra-external {
+    display: block;
+    opacity: 1;
+}
+
 .geogebra-external {
+    opacity: 0;
     position: absolute;
     width: 25px;
     height: 25px;
-    top: 10px;
-    left: 10px;
-    color: white;
-    background-color: variables.$primary-cyan;
+    top: 5px;
+    left: 5px;
+    color: variables.$light;
+    background-color: black;
     padding: 3px;
     border-radius: 5px;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .geogebra-external svg {
