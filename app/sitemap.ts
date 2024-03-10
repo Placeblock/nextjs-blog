@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             lastModified: new Date(),
             changeFrequency: "monthly"
         },
-        ...posts.map(p => ({
+        ...posts.filter(p => p.data.isPublished).map(p => ({
             url: "https://blog.codelix.de/"+p.slug,
             lastModified: p.data.publishedOn,
             changeFrequency: ("monthly" as "monthly")
