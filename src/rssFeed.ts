@@ -18,6 +18,7 @@ export default async function generateRssFeed() {
     const posts = await getBlogPostsMeta();
 
     for (let post of posts) {
+        if (!post.data.isPublished) continue;
         feed.item({
             title: post.data.title,
             description: post.data.description,
