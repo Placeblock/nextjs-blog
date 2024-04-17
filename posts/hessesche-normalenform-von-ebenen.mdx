@@ -107,12 +107,26 @@ $$
 
 <GeoGebra src="dot-product-distance" id="4" type="geometry" external="https://www.geogebra.org/m/ssednse4"/>
 
-Das Skalarprodukt liefert uns also neben dem Winkel auch den Abstand
+Das Skalarprodukt liefert uns also neben dem Winkel zwischen zwei Vektoren auch den Abstand
 eines Vektors / Punktes zu jeder beliebigen Gerade, welche durch den
 Normalenvektor $$\overrightarrow{n}$$ beschrieben ist.
 
-Diese Gerade verläuft immer durch den Ursprung. Durch einfache Subtraktion
-können wir allerdings auch den Abstand zu einer Gerade $$g$$ berechnen,
+Dieses Phänomen lässt sich auch mit der anderen Darstellungsform des Skalarprodukts erklären.
+
+$$
+\overrightarrow{n} \circ \overrightarrow{P} = \vert \overrightarrow{n} \vert \cdot \vert \overrightarrow{P} \vert \cdot cos(\overrightarrow{n},\overrightarrow{P})
+$$
+
+Die Definition des Skalarprodukts beginnt mit dem Produkt der Längen der beiden Vektoren. Demnach wäre 
+ohne den Kosinus das Skalarprodukt sehr groß, wenn die Längen der beiden Vektoren sehr groß sind.
+Jetzt wird dieses Produkt allerdings noch mit dem Kosinus des Winkels zwischen den beiden Vektoren multipliziert.
+Dadurch wird das Skalarprodukt sehr klein, sollte der Winkel gegen 90° gehen, da der Kosinus bei 90° = 0 ist.
+Je näher der Punkt P (A in der Simulation) der Geraden kommt, desto näher kommt der Winkel zwischen den beiden Vektoren an 90° heran.
+Dieses Verhältnis zwischen Produkt der beiden Vektoren und dem Kosinus zwischen den beiden Vektoren scheint sich so auszugleichen,
+dass am Schluss der Abstand des Punktes A von der Geraden herauskommt.
+
+Die Gerade verläuft bisher allerdings immer durch den Ursprung. Durch einfache Subtraktion
+können wir durchaus auch den Abstand zu einer Gerade $$g$$ berechnen,
 welche nicht durch den Ursprung verläuft.
 Es sei $$g$$ eine Gerade mit Aufpunkt $$A$$, welche an beliebiger Stelle im Raum liegt.
 Es sei $$h$$ eine Gerade, welche durch den Ursprung verläuft, mit gleichem Normalenvektor wie $$g$$.

@@ -8,6 +8,7 @@ export const dynamic = "force-static"
 
 export default async function Page({ params }: { params: { tag: string } }) {
     var posts = await getBlogPostsMeta();
+    console.log(posts);
     posts = posts.filter(p => p.data.tags.includes(params.tag))
     return <div>
         <Link className="tag" href={"/"}>Alle</Link>
