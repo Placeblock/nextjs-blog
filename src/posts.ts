@@ -24,7 +24,7 @@ export async function getBlogPostData(slug: string): Promise<{code: string, data
 
     const {code, frontmatter} = await bundleMDX({source: source, mdxOptions: (options, fm) => {
         // Add remark Plugins and rehype Plugins
-        options.remarkPlugins = [...(options.remarkPlugins ?? []), ...[remarkMath]]
+        options.remarkPlugins = [...(options.remarkPlugins ?? []), ...[[remarkMath, {singleDollarTextMath: true}]]]
         options.rehypePlugins = [...(options.rehypePlugins ?? []), ...[rehypeKatex, rehypeSlug, rehypeAutolinkHeadings, imageMetadata, rehypePrism, [toc, {
             customizeTOC: toc => {
                 if (toc.children[0].children.length === 0) return false;

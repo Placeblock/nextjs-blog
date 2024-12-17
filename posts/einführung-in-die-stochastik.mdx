@@ -1,0 +1,91 @@
+---
+title: "Einführung in die Stochastik"
+description: "Oft wird die Stochastik als das Hass-Thema der Mathematik überhaupt bezeichnet. Hiermit
+            will ich zeigen, dass auch das Gegenteil der Fall sein kann, sobald man das Thema versteht!"
+banner: "https://cdn.pixabay.com/photo/2020/05/24/14/25/cube-5214498_960_720.jpg"
+isPublished: true
+publishedOn: 2024-07-12T22:12:00
+tags: [math,statistics,probability]
+---
+
+# Einleitung
+
+Stochastik - die Kunst des Plastik Zahnstochers - oder so ähnlich. 
+Gute Idee, tatsächlich kommt der Begriff allerdings eigentlich, 
+wie so oft, aus dem altgriechischen. "_Kunst des Vermutens_" 
+oder "_Ratekunst_". Und das kommt auch schon verdammt nahe an 
+die Themen heran, welche die Stochastik behandelt.
+
+Im Themengebiet der Stochastik dreht sich alles um Warscheinlichkeiten. 
+Mit welcher Warscheinlichkeit mache ich wohl morgen meine Hausaufgaben? 
+Nun, um ehrlich zu sein, eine eher rhetorische Frage. 
+Wie warscheinlich ist morgen der Weltuntergang? 
+Hoffentlich schwindend gering, aber bestimmt nicht null! 
+Ein passenderes Anwendungsbeispiel ist vielleicht das Glücksspiel. 
+Wie viel Geld werde ich wohl in dieser Runde Roulette verlieren 
+(Oder gewinnen ?;))? Diese Frage ist ansich leicht zu beantworten, 
+greift allerdings schon auf ein wichtiges Grundprinzip der Stochastik zurück. 
+Wo wir also schon mitten drin in der Welt der Stochastik sind, lasst uns 
+diese aufregende Reise durch Zahlen und Buchstaben beginnen!
+
+# Definitionen 😵‍💫
+
+Nun wollen wir uns mit ein paar Zufallsexperimenten beschäftigen. 
+Bevor wir aber tiefer in die Materie einsteigen können, müssen wohl oder übel 
+noch ein paar Begriffe definiert werden.
+
+<ErrorCard>
+    Das __Ergebnis__, welches oft auch als $\omega$ bezeichnet wird, 
+    ist ein mögliches Ergebnis eines Zufallexperiments. 
+    Beim Würfeln eines sechsseitigen Würfels wäre ein mögliches Ergebnis z.B. __6__.
+</ErrorCard>
+
+<ErrorCard>
+    Alle mögliche Ergebnisse werden zusammengefasst in der __Ergebnismenge__ $\varOmega$.
+    Die Ergebnismenge beim Wurf eines sechsseitigen Würfels ist 
+    $\varOmega = \{1, 2, 3, 4, 5, 6\}$.
+    Betrachten wir den zweifachen Wurf eines Würfels besteht $\varOmega$ aus 36 möglichen
+    Zahlenparen 
+
+    $$\varOmega = \{(1;1), (1;2), (1;3), (1;4), (1;5), (1;6), (2;1), (2;2),\\ (2;3), (2;4), (2;5), (2;6),...\}$$
+
+    Ist ein Ergebnis Teil einer Ergebnismenge wird das als $\omega$ _ist 
+    Element von_ $\varOmega$ oder kurz: $\omega \in \varOmega$ beschrieben.
+</ErrorCard>
+
+<ErrorCard>
+    Die __Zufallsgröße__ ist eine Funktion $X$, die jedem Ergebnis $\omega \in \varOmega$
+    eines Zufallsexperiments eine reelle Zahl $X(\omega)$ zuordnet. Das klingt jetz kompliziert,
+    ist in wirklichkeit allerdings einfach. Würfeln wir beim zweifachen Wurf eines Würfels das
+    Ergebnis $\omega = 13$ zählt unsere Funktion $X$ die Augen zusammen. In diesem Fall wäre
+    $X(\omega) = 4$. Das ist keine klassische mathematische Funktion, zu welcher man einen
+    Grafen zeichnen könnte. In unserem Fall ordnet sie lediglich jedem Ergebnis die Summe der 
+    Augen zu.
+</ErrorCard>
+
+<ErrorCard>
+    Der Begriff __Ereignis__ wird dazu verwendet, ein oder mehrere Ergebnisse eines
+    Zufallsexperiments zu beschreiben.
+    Betrachten wir die Zufallsgröße X: "Augensumme beim zweifachen Wurf eines Würfels" könnte
+    man das Ereignis A: "Die Augensumme ist 3" ausschreiben als: $A = \{11, 12, 21\}$, oder 
+    abstrakter durch $A = \{\omega \mid X(\omega) = 3\}$ (A besteht aus der Menge aller 
+    $\omega$ mit der Eigenschaft $X(\omega) = 3$) oder kurz $X = 3$ darstellen, da $X$
+    als Zufallsgröße hier die Augensumme darstellt.
+</ErrorCard>
+
+<Details summary="Beispiel">
+    Betrachten wir das Zufallsexperiment "Werfen von zwei Münzen".
+    Unsere Zufallsgröße $X$ könnte z.B. jedem Ergebnis $\omega$ die Anzahl
+    der Kopf-Würfe zuordnen.
+
+    $$X((Zahl; Kopf)) = 1$$
+
+    $$X((Zahl; Zahl)) = 0$$
+
+    $$X((Kopf; Kopf)) = 2$$
+
+    $$X((Kopf; Zahl)) = 1$$
+
+    Genauso könnte $X$ allerdings auch jedem Ergebnis die Anzahl der Zahl-Würfe
+    zuordnen. Das ist dann die Aufgabe des Aufgabenstellers ;).
+</Details>
