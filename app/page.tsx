@@ -32,6 +32,11 @@ export async function generateMetadata(): Promise<Metadata> {
             images: [{
                 url: "https://cdn.pixabay.com/photo/2015/12/04/14/05/code-1076536_960_720.jpg"
             }]
+        },
+        alternates: {
+            types: {
+                'application/rss+xml': 'https://blog.codelix.de/rss.xml'
+            }
         }
     }
 }
