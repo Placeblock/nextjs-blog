@@ -57,17 +57,17 @@ noch ein paar Begriffe definiert werden.
     Die __Zufallsgröße__ ist eine Funktion $X$, die jedem Ergebnis $\omega \in \varOmega$
     eines Zufallsexperiments eine reelle Zahl $X(\omega)$ zuordnet. Das klingt jetz kompliziert,
     ist in wirklichkeit allerdings einfach. Würfeln wir beim zweifachen Wurf eines Würfels das
-    Ergebnis $\omega = 13$ zählt unsere Funktion $X$ die Augen zusammen. In diesem Fall wäre
+    Ergebnis $\omega = (1;3)$ zählt unsere Funktion $X$ die Augen zusammen. In diesem Fall wäre
     $X(\omega) = 4$. Das ist keine klassische mathematische Funktion, zu welcher man einen
     Grafen zeichnen könnte. In unserem Fall ordnet sie lediglich jedem Ergebnis die Summe der 
-    Augen zu.
+    Augen zu. ($X$ ist also eine nicht-injektive und nicht-surjektive Abbildung um genau zu sein ;)).
 </ErrorCard>
 
 <ErrorCard>
     Der Begriff __Ereignis__ wird dazu verwendet, ein oder mehrere Ergebnisse eines
     Zufallsexperiments zu beschreiben.
-    Betrachten wir die Zufallsgröße X: "Augensumme beim zweifachen Wurf eines Würfels" könnte
-    man das Ereignis A: "Die Augensumme ist 3" ausschreiben als: $A = \{11, 12, 21\}$, oder 
+    Betrachten wir die Zufallsgröße $X$: "Augensumme beim zweifachen Wurf eines Würfels" könnte
+    man das Ereignis $A$: "Die Augensumme ist 3" ausschreiben als: $A = \{(1;1), (1;2), (2;1)\}$, oder 
     abstrakter durch $A = \{\omega \mid X(\omega) = 3\}$ (A besteht aus der Menge aller 
     $\omega$ mit der Eigenschaft $X(\omega) = 3$) oder kurz $X = 3$ darstellen, da $X$
     als Zufallsgröße hier die Augensumme darstellt.
