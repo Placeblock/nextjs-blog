@@ -11,6 +11,7 @@ export default function RootLayout({
         <html lang="en">
             <head>
                 <link rel="icon" href="/favicon.ico" sizes="any" />
+                <link rel="alternate" type="application/rss+xml" href="https://blog.codelix.de/rss.xml" title="RSS Feed" />
             </head>
             <body>
                 <div id="blog">
