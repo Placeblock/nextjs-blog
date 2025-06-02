@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev -p 9175",
     "build": "next build",
-    "start": "next start -p 9175",
+    "start": "next start -p 9102",
     "lint": "next lint"
   },
   "author": "",
