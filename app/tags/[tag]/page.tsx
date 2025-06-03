@@ -6,10 +6,11 @@ import { getBlogPostsMeta } from "src/posts";
 export const revalidate = 600
 export const dynamic = "force-static"
 
-export default async function Page({ params }: { params: { tag: string } }) {
+export default async function Page({ params }: { params: Promise<{ tag: string }> }) {
+	var syncParams = await params
     var posts = await getBlogPostsMeta();
     console.log(posts);
-    posts = posts.filter(p => p.data.tags.includes(params.tag))
+    posts = posts.filter(p => p.data.tags.includes(syncParams.tag))
     return <div>
         <Link className="tag" href={"/"}>Alle</Link>
         <Postlist posts={posts}/>

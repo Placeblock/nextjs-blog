@@ -23,16 +23,22 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
-      "@ui/*": ["src/ui/*"]
-    }
+      "@components/*": [
+        "components/*"
+      ],
+      "@ui/*": [
+        "src/ui/*"
+      ]
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "components/button.jsx"  ],
+    "**/*.tsx",
+    "components/button.jsx"
+  ],
   "exclude": [
     "node_modules"
   ]

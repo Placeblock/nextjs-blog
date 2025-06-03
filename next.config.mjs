@@ -7,6 +7,5 @@ export default {
         port: ""
       }
     ]
-  },
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx']
+  }
 }

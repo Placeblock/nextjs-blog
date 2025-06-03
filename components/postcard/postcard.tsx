@@ -1,11 +1,11 @@
 import { Card } from "@components/card/card";
 import { memo } from "react";
-import { Post } from "src/posts";
+import { PostInfo } from "src/posts";
 import "./postcard.scss";
 import Taglist from "@components/taglist/taglist";
 import Link from "next/link";
 
-export default memo(function PostCard({post}: {post: Post}) {
+export default memo(function PostCard({post}: {post: PostInfo}) {
     return <Card className="post-card">
         <Link href={"/"+post.slug} style={{textDecoration: "none"}}>
             <h4 className="post-card-title gradient" dangerouslySetInnerHTML={{__html: post.data.title}}></h4>
