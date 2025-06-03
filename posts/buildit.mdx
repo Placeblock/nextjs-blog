@@ -1,0 +1,62 @@
+---
+title: "BuildIT - Tagebuch meines Logik-Gatter Simulations Spiels"
+description: "Seit einiger Zeit arbeite ich an meinem Logik-Gatter Simulations Programm. Jetzt habe ich mich dazu entschieden meine Reise zu dokumentieren"
+banner: "https://cdn.pixabay.com/photo/2022/09/11/19/35/circuit-7447920_960_720.png"
+isPublished: true
+publishedOn: 2025-06-02T22:27:00 
+tags: [c++,vulkan,development,game]
+---
+
+Hallo Freunde des Internets!
+
+Seit einigen Monaten arbeite ich nun an meinem Spiel rund um die Simulation von Logik-Gattern und noch vielem mehr.
+Nun möchte ich euch mit auf meine Reise nehmen. Ich werde versuchen, nach jedem Entwicklungstag ein kleines Update
+hier zu hinterlassen - für meine Nachwelt! 
+
+## 02. Juni 2025
+Die Überlegungen zur Software Architektur sind immernoch in vollem Gange. Nachdem ich mal wieder ein bisschen
+an meiner Entscheidung, dynamic Libraries als Plugins zu verwenden, gezweifelt habe, habe ich dann doch ein bisschen
+an der Registrierung von Komponenten und Leiterplatten weiterentwickelt.
+Ich habe gelernt, dass dynamic Libraries gar nicht so trivial sind - wegen ABI problemen - und erneut wurde mir gezeigt,
+warum ich Apple hasse. (Lasst mich doch bitte einfach dynamic libraries für MacOS auf Linux kompilieren!)
+So langsam habe ich eine Idee wie die ganzen einzelnen Code-Module 
+(ECS, Serialisierung, Event-Management, History, Vulkan, Plugins, Network) zusammenspielen könnten.
+Meine Ziel ist es ja, die drei folgenden "Modi" zu unterstützen
+
+- Singleplayer (Alles läuft lokal)
+Dabei soll aber nicht - wie zum Beispiel in Minecraft - ein lokaler Server gestartet werden.
+Der Grafik-Layer soll direkt auf das ECS (den Core) zugreifen - im selber Prozess.
+- Local gehosteter Server-Layer
+Ein Spieler spielt wie im Singleplayer Modus, zusätzlich wird allerdings ein Server-Layer
+gestartet. Andere Clients starten wie immer den Core zusätzlich allerdings noch den Client-Layer
+um mit dem Server zu kommunizieren und Änderungen am lokalen Core vorzunehmen.
+- Server / Client
+Headless Server, welcher nur den sogenannten Core und den Server-Layer startet.
+Die Clients benutzen wie im vorherigen Modus den Core und den Client-Layer.
+
+Das würde mir erlauben, z.B. eine Headless-Binary zu kompilieren, die dann auch wirklich nur
+den Core und Server-Layer enthält :).
+
+Nun ja, soweit so gut. Ich werde jetzt noch ein bisschen an den einzelnen Layern tüfteln!
+
+**Update 04:15**
+
+GRRR. Morgen um 09:00 ist Uni. Eigentlich wollte ich nur bis um vielleicht 1 Uhr programmieren.
+Leider musste ich jetzt erstmal die gesamte Blog-Seite umprogrammieren wegen NodeJS Problemen...
+Irgendwann programmier ich die mal in Go oder so neu -.-.
+
+## 03. Juni 2025
+Nach guten drei Stunden Schlaf und ein bisschen Uni habe ich mich weiter mit Vulkan auseinander gesetzt.
+Alles sieht dannach aus die Plugins mit C-Interface zu schreiben und da es Plugins ja möglich sein muss,
+mit Vulkan zu interagieren, muss ich ja erstmal wissen wie Vulkan funktioniert!
+
+Dabei bin ich über einen überaus spannenden Artikel gestoßen:
+
+<InfoCard>
+[A trip thorugh the Graphics Pipeline](https://fgiesen.wordpress.com/2011/07/09/a-trip-through-the-graphics-pipeline-2011-index/)
+</InfoCard>
+Ist sehr lesenswert.
+
+Recht viel weiter als ein laufendes GLFW und die Anfänge von Vulkan (Debug Extension und Validation Layer) bin ich bisher
+nicht gekommen, aber schließlich will ich das ja auch alles wirklich verstehen und nicht nur benutzen. Ich glaube das
+macht die spätere Verwendung von Vulkan bedeutend einfacher.
