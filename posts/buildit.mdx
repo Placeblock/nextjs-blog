@@ -60,3 +60,47 @@ Ist sehr lesenswert.
 Recht viel weiter als ein laufendes GLFW und die Anfänge von Vulkan (Debug Extension und Validation Layer) bin ich bisher
 nicht gekommen, aber schließlich will ich das ja auch alles wirklich verstehen und nicht nur benutzen. Ich glaube das
 macht die spätere Verwendung von Vulkan bedeutend einfacher.
+
+## 04. Juni 2025
+**Eine Nachricht an mich selbst und Andere:**
+Was ich mir da zur Aufgabe gemacht habe, ist sicher nicht einfach.
+C++ als Sprache birgt viele Schwierigkeiten. Plugins müssen für alle Betriebsysteme extra kompalliert werden.
+C als Schnittstelle zu den Plugins machen Dinge nicht einfacher. Die Nutzung von Vulkan ist sehr komplex und
+wird viel Aufwand benötigen, um Vulkan-Funktionalität in den Plugins bereit zu stellen. Für Nutzer soll es
+einfach sein Plugins zu installieren. Sicherheitstechnisch sind jetzt dynamic libraries auch nicht unbedingt
+das wahre. Aber ich mache das aus Gründen.
+Theoretisch wäre es möglich OpenGL zu verwenden, aber ich will kennenlernen, wie die Grafikkarte wirklich funktioniert.
+Will die Features von Vulkan nutzen können, selbst wenn es komplexität mit bringt.
+Ich will kein Java verwenden. Ich will, dass das gebaute Programm ein paar Megabyte an größe hat und keine
+5 Gigabyte Ram benötigt.
+Ich will, dass Menschen Plugins schreiben können die komplexe Dinge machen. Einer meiner Ideen ist ein
+Musik-Plugin, welches eigene UDP Verbindungen aufbaut und mit Supercollider coole Synthesizer Dinge macht!
+Mein Ziel für dieses Spiel ist ein Sandkasten für große Kinder.
+Dabei will ich Dinge lernen.
+Deshalb mache ich Dinge so, wie ich sie mache.
+Das sollte ich mir vielleicht öfters mal selbst ins Gedächtnis rufen, wenn ich mal wieder daran zweifle ob das alles
+so eine gute Idee ist.
+
+Jetzt habe ich noch ein wenig weiter mit Vulkan experimentiert. Zäh, aber es wird, immerhin habe ich jetzt schonmal ein Device
+und eine Graphics Queue!
+
+## 16. Juni 2025
+We've got a triangle! Nach einer entspannten Woche außerhalb der Hochschule habe ich mich wieder weiter mit BuildIT beschäftigt
+und wir haben nun endlich ein Dreieck auf dem Bildschirm!
+Ein zwar Validation-Layer Errors bekommen wir zwar noch, aber ansonsten ist das ein großer Schritt in die richtige Richtung :).
+Jetzt kann ich mir mal überlegen wie ich das mit Vulkan alles mache :)
+
+Beim Lesen über Vulkan Synchronization bin ich über folgenden sehr hilfreichen Blogpost gestolpert:
+
+<InfoCard>
+[Yet another blog explaining Vulkan synchronization](https://themaister.net/blog/2019/08/14/yet-another-blog-explaining-vulkan-synchronization/)
+</InfoCard>
+Sehr interessant.
+
+## 18. Juni 2025
+Nach dem funktionierenden Dreieck habe ich mich nochmal intensiv mit den Synchronizationsmechanismen auseinandergesetzt um einen Fehler zu beheben.
+Tatsächlich habe ich dann erfahren, dass meine Referenz wohl veraltet ist und man Dinge eigentlich anders machen sollte.
+Dann habe ich mir die Dinge so überlegt, wie ich es für richtig halte und tatsächlich hat sich dass dann mehr oder weniger später auch durch einen
+passenden [Github Issue](https://github.com/Overv/VulkanTutorial/issues/407) bestätigt.
+Auf meinem Laptop mit Integrierter Grafikkarte haben wir außerdem die 10000 FPS Grenze erreicht!
+What a time to be alive!
