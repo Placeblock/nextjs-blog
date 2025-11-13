@@ -3,7 +3,7 @@ title: "BuildIT - Tagebuch meines Logik-Gatter Simulations Spiels"
 description: "Seit einiger Zeit arbeite ich an meinem Logik-Gatter Simulations Programm. Jetzt habe ich mich dazu entschieden meine Reise zu dokumentieren"
 banner: "https://cdn.pixabay.com/photo/2022/09/11/19/35/circuit-7447920_960_720.png"
 isPublished: true
-publishedOn: 2025-06-02T22:27:00 
+publishedOn: 2025-10-21T00:33:00 
 tags: [c++,vulkan,development,game]
 ---
 
@@ -104,3 +104,115 @@ Dann habe ich mir die Dinge so überlegt, wie ich es für richtig halte und tats
 passenden [Github Issue](https://github.com/Overv/VulkanTutorial/issues/407) bestätigt.
 Auf meinem Laptop mit Integrierter Grafikkarte haben wir außerdem die 10000 FPS Grenze erreicht!
 What a time to be alive!
+
+## 28. Juni 2025
+Da wir in wenigen Wochen Klausuren-Phase haben, habe ich leider viel für die Uni zu lernen.
+Ich habe heute das Shader laden deutlich vereinfacht. Vorher wurden die Shader als glsl geladen und zur Laufzeit zu SPIR-V kompilliert.
+Jetzt kompillier ich die beim Bauen des Projektes und lade die kompillierten SPIR-V Shader direkt. Das ist deutlich schöner.
+Außerdem habe ich die alten Grid-Shader rüber kopiert und die alte Leiterplatte zu sehen hat mir schon einen Nostalgie-Schub verpasst ;).
+Mal sehen, dass ich vielleicht eine einfache Steuerung mit Uniforms mal zum Laufen bekomme und vielleicht ein paar gemalte Logik-Gatter!
+
+## 14. Juli 2025
+Mitten in der Klausuren-Phase ein bisschen am Projekt weiter arbeiten? Klingt nach etwas, was ich definitiv tun würde!
+Ich habe heute nämlich Dear ImGUI zum laufen bekommen! War ein bisschen Arbeit, aber eigentlich sogar leichter als gedacht.
+Jetzt kann ich damit mal ein wenig rum experimentieren. Irgendwie muss ich aber jetzt wohl mal noch meine 800 Zeilen Vulkan Klasse aufräumen.
+Nächste Woche sind Prüfungen und dann schaffe ich hoffentlich wieder mehr :) 
+
+## 24. Juli 2025
+Ich berichte hier gerade live und exklusiv aus der Klausurenwoche. Nur noch eine Klausur wartet morgen auf mich und auf
+die bin ich gut vorbereitet, der Rest lief auch gut. Die letzten Tage habe ich immer mal wieder am Programm weiter entwickelt!
+Jetzt funktioniert nicht nur das Dear ImGui, sondern wir haben auch schon einzelne Circuitboards in den Gui Fenstern drinnen!
+Das klingt jetzt nach wenig - ist es aber ganz und gar nicht. Da muss man sich nämlich um Images, Image Views, Device Memory, Framebuffers,
+Descriptor Sets, Command Buffers, Render Passes, Pipelines, Shader, Samplers, und und und kümmern.
+Ich habe auf jeden Fall viel gelernt. In den letzten Tagen hatte ich mit der Synchronisierung für diese
+Off-Screen Framebuffer (besonders beim Ändern der Größe) noch so meine Probleme, mitlerweile habe ich das aber - 
+meiner Meinung nach - sehr elegant gelößt. Jetzt beschäftige ich als nächstes mal mit - achtung - 
+Instanced Indrect Rendering mit Compute Shader Culling! Klingt kompliziert - ist es auch. Aber wer wäre ich denn
+wenn mich komplizierte Sachen nicht reizen würden. Man muss ja schließlich immer was dazu lernen, nicht war?
+
+## 1. Oktober 2025
+Long time no see! Wärend meiner Praxisphase habe ich wenig am Projekt weiter gearbeitet - gestärkt bin ich jetzt zurück.
+Das Instanced Indirect Rendering mit Compute Shader Culling macht gute Fortschritte. Ich habe viel über Vulkan gelernt, besonders über
+die Architektur eines solchen Spiels. Ich bin mitlerweile auf den VMA (Vulkan Memory Allocator) umgestiegen und auch die ersten Klassen
+zur Pipeline-Erstellung und anderen Resourcen existieren mitlerweile.
+Synchronisierung ist immer noch komplex, durch die Helfer-Klassen geht im eigentlichen Code aber viel komplexität verloren.
+Dadurch sollte die Synchronisierung einfacher handhabbar sein. Hoffentlich brauche ich also keinen Render-Graph.
+Vielleicht habe ich in der nächsten Woche aber schon mal Logik-Gatter (Aka Vierecke) auf dem Bildschirm!
+
+## 21. Oktober 2025
+Es geht voran! Am Samstag hatte ich um 3 Uhr Nachts DIE Eingebung meines Lebens. Alle Gedanken der letzten 12 Monate sind zusammen geflossen.
+In 40 Zeilen habe ich meine Gedanken heruntergeschrieben und grob zusammen-gefasst, wie die interne Struktur aussehen soll!
+
+<Details summary="40 Zeilen">
+	Das Plugin registriert einen Chip mit Namen. Außerdem werden Funktionen zum (de-)serialisieren der
+	Simulations und Graphic Komponenten bereitgestellt.
+	Wenn der Host einen Chip instantiiert, geht er zum Plugin und instanziert die Simulations-Klasse.
+	(Die Instanz der Simulation wird als SimulationComponent im Entity mit named storage gespeichert.)
+	Ein Mapping von Simulationsinstanz -> Entity wird verwaltet.
+	Jede Simulationsnode besitzt eine Funktion für das erhalten der grafischen Daten. Also
+	alle Daten die übers netz synchronisiert werden sollen.
+	Diese wird initial aufgerufen und das ergebnis in einer übers netz synchronisierten GraphicComponent gespeichert.
+	Über die Simulations instanz werden alle input und output pins geholt.
+	Für die Pins werden jeweils Entitäten erzeugt mit einem Pin Component, der den Pin referenziert.
+	Ein Mapping von Pin -> Entity wird verwaltet.
+	Wenn die Simulationsinstanz updated holen wir uns über das Mapping die Entität, berechnen den GraphicComponent neu
+	und setzen die GraphicComponent was zum Netzwerk sync führt. Dieses graphic-component berechnen kann im Batch laufen.
+	Die simulation schreibt alle berechneten Instanzen in eine QUeue.
+	Alle berechneten Output Pins werden ebenfalls in eine queue gesteckt.
+	Beim abarbeiten der Output Pin queue holen wir uns über das Mapping die Entität und triggern ein onupdate was
+	zum Netzwerk sync führt.
+	Zu einem Output Pin kann immer nur ein Netzwerk gehören. Dafür wird ggf. irgendwo ein Mapping existieren.
+	So kann das Netzwerk geupdated werden wenn der Pin sich ändert.
+	Zum Rendern kann der GraphicComponent über das named storage performant abgefragt werden.
+	Beim Reindern sollen auch andere Komponenten wie z.B. Settings abgefragt werden können.
+	
+	Kopieren von Chips?
+	-> Entscheidung des Spielers ob mit Daten oder ohne kopiert werden soll
+	-> Simulations-Klasse muss mit oder ohne daten kopierbar sein (vom plugin implementiert was das bedeutet)
+	-> Andere dem Entity angehängte Komponenten müssen ebenfalls kopiert werden (Rotation, Settings, etc.)
+	-> Erstmal alle Komponenten Kopieren, dann Simulations Instanz kopieren mit regeln.
+	-> Beim kopieren mehrer Chips:
+		- Ausgewählte Chips kopieren. Temporäres Mapping von alten Chips zu neuen Chips verwalten
+		- Verbindungen durch gehen und herstellen, falls ziel und ursprung in dend kopierten Chips sind
+	Chip-Makros?
+	- Ausgewählte Chips kopieren
+	- Falls Verbindungen zu außenstehenden Chips bestehen abbrechen.
+	- Input und Output Chips suchen und pins erzeugen.
+	-> Infinite Rekursion Chips:  
+	Settings - Component: Wie funktioniert die Netzwerk synchronisation?
+	-> Settings Änderung führt zu Event zum Server: Ändert die Settings Komponente.
+	-> Bei dem Client mit Simulation muss das Plugin die Settings-Änderung mitbekommen können und
+	   ggf. die Simulationsinstanz anpassen können
+	History?
+	-> Alter State der Komponenten speichern & ggf. wiederherstellen
+</Details>
+
+Diese 40 Zeilen sind teilweise stark vereinfacht und sind nicht gedacht von anderen gelesen zu werden ;).
+Über die Monate hinweg hat sich ja auch folgendes DrawIO-Diagram entwickelt, welches auch in GitHub zu finden ist:
+
+![image](/images/buildit.jpg)
+
+Jetzt habe ich bereits die Plugin-Schnittstelle geschrieben - zumindest zum Chip-Registrieren sollts erstmal reichen.
+Als nächstes will ich die ECS-Logik einbauen, so sollte dann alles zusammen finden!
+What a time to be alive ;)
+
+## 23. Oktober 2025
+
+Ich bin begeistert liebe Menschen und ich hoffe ihr seid es auch, denn ich darf euch präsentieren:
+
+```
+Loaded plugin de.codelix:default with version 0
+Hello World! From Plugin de.codelix:default
+Plugin API Version: 0
+Registering chip de.codelix:and
+Creating not gate
+Created chip
+2230246 updates/s
+2243317 updates/s
+2241035 updates/s
+2240869 updates/s
+```
+
+Cool, nicht? Hier könnt ihr eine erfolgreiche Simulation sehen :) Und nicht nur das, der simulierte Chip wird von
+einem Plugin bereitgestellt, welches zur Laufzeit geladen wurde! Ja das ist auf jeden Fall die Errungenschaft
+des Tages, byee!

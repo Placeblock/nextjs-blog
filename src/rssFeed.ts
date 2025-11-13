@@ -18,11 +18,13 @@ export default async function generateRssFeed() {
     const posts = await getBlogPostsMeta();
 
     for (let post of posts) {
+    	const blogURL = `${site_url}/${encodeURIComponent(post.slug)}`
+    	
         if (!post.data.isPublished) continue;
         feed.item({
             title: post.data.title,
             description: post.data.description,
-            url: `${site_url}/${post.slug}`,
+            url: blogURL,
             date: post.data.publishedOn,
             categories: post.data.tags
         })
