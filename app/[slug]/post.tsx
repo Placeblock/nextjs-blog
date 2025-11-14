@@ -2,6 +2,7 @@ import "./code.scss";
 import "./style.scss";
 import "./math.css";
 import {Card, InfoCard, ErrorCard} from "@components/card/card"
+import {Parser} from "@components/contextfree/parser"
 import Details from "@components/details"
 import GeoGebra from "@components/geogebra/geogebra"
 import Image, { ImageProps } from "next/image";
@@ -44,6 +45,7 @@ export default async function Post({source}: { source: string }) {
 		},
 		components: {
 		        Card, InfoCard, ErrorCard,
+		        Parser,
 		        GeoGebra, Details,
 		        img: (props) => (
 		            <Image
