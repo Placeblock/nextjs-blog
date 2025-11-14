@@ -1,0 +1,57 @@
+.parser {
+	width: 100%;
+}
+
+.gramar-config {
+	width: 100%;
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.gramar-config input {
+	padding: 10px;
+	background-color: black;
+	color: white;
+	border-radius: 5px;
+	border: 1px solid gray;
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 5px;
+}
+
+.gramar-config label {
+	flex-grow: 2;
+	min-width: 200px;
+}
+
+.parser-item {
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 5px;
+	display: inline-block;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+.parser-item-editable input {
+	width: 60px;
+	background-color: black;
+	color: white;
+	border: none;
+	text-align: center;
+}
+
+.transition-config {
+	display: flex;
+	gap: 10px;
+}
+.transition-config button {
+	background-color: black;
+	color: white;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.transitions {
+	margin-bottom: 20px;
+}
